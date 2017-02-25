@@ -608,6 +608,9 @@
                                     <constraint firstAttribute="height" constant="40" id="LWj-nj-1VL"/>
                                 </constraints>
                                 <state key="normal" backgroundImage="Button-2"/>
+                                <connections>
+                                    <segue destination="nM1-xF-dHJ" kind="show" id="ZzS-9R-nL9"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
