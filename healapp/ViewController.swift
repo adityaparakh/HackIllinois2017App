@@ -42,6 +42,7 @@ class ViewController: UIViewController {
         })
     }
     @IBAction func login(_ sender: Any) {
+        print("login")
         FIRAuth.auth()?.signIn(withEmail: email.text!, password: password.text!, completion: { (user, error) in
             if error != nil{
                 
@@ -61,9 +62,10 @@ class ViewController: UIViewController {
                 
             } else {
                 DataService.ds.REF_USERS.child(user!.uid).observe(.value, with: { (snapshot) in
-                    if let details = snapshot.value as? Dictionary<String, AnyObject>{
+                    if let details = snapshot.value as? AnyObject{
                         print(details)
                     }
+                    self.performSegue(withIdentifier: "clientsegue", sender: self)
                 })
                 
                 
