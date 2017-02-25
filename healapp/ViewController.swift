@@ -71,13 +71,27 @@ class ViewController: UIViewController {
                 }
                 
             } else {
-                DataService.ds.REF_USERS.child(user!.uid).observe(.value, with: { (snapshot) in
-                    if let details = snapshot.value as? AnyObject{
-                        print(details)
-                        //self.STORE_IN_PHONE(user_key: "user_data", userData: details as! String)
-                    }
-                    self.performSegue(withIdentifier: "caretakersegue", sender: self)
-                })
+                if self.caretaker.isOn{
+                    // this is USEr
+                    DataService.ds.REF_USERS.child(user!.uid).observe(.value, with: { (snapshot) in
+                        if let details = snapshot.value as? AnyObject{
+                            print(details)
+                            //self.STORE_IN_PHONE(user_key: "user_data", userData: details as! String)
+                        }
+                        self.performSegue(withIdentifier: "caretakersegue", sender: self)
+                    })
+
+                } else{
+                    // this is caretaer
+                    DataService.ds.REF_USERS.child(user!.uid).observe(.value, with: { (snapshot) in
+                        if let details = snapshot.value as? AnyObject{
+                            print(details)
+                            //self.STORE_IN_PHONE(user_key: "user_data", userData: details as! String)
+                        }
+                        self.performSegue(withIdentifier: "clientsegue", sender: self)
+                    })
+
+                }
                 
                 
             }

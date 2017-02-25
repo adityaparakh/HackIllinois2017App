@@ -12,12 +12,18 @@ import CoreLocation
 
 class ClientViewController: UIViewController, CLLocationManagerDelegate {
     
-    var locationManager:CLLocationManager!
+    
+    
+    var locationManager: CLLocationManager = CLLocationManager()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        determineMyCurrentLocation()
-        locationManager.requestLocation()
+        
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.delegate = self
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
+        print("FUCK U!")
 
         // Do any additional setup after loading the view.
     }
@@ -33,29 +39,18 @@ class ClientViewController: UIViewController, CLLocationManagerDelegate {
     
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        let userLocation:CLLocation = locations[0] as CLLocation
-        
-        print("user latitude = \(userLocation.coordinate.latitude)")
-        print("user longitude = \(userLocation.coordinate.longitude)")
-    }
-    
-    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error)
-    {
-        print("Error \(error)")
-    }
-    
-    
-    func determineMyCurrentLocation() {
-        locationManager = CLLocationManager()
-        locationManager.delegate = self
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        locationManager.requestAlwaysAuthorization()
-        
-        if CLLocationManager.locationServicesEnabled() {
-            locationManager.startUpdatingLocation()
-            //locationManager.startUpdatingHeading()
+        if let location = locations.first {
+            print("Found user's location: \(location)")
+        }
+        else {
+            print("YOLO")
         }
     }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print("Failed to find user's location: \(error.localizedDescription)")
+    }
+
     
 
     /*
