@@ -27,7 +27,7 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
-        locationManager.startUpdatingLocation()
+        locationManager.requestLocation()
         
         loadData()
         self.friendsTable.delegate = self
