@@ -151,6 +151,7 @@
 				TargetAttributes = {
 					84EB915F1E6160FA000DD3FD = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 6WUQHVNHBS;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -372,6 +373,7 @@
 			baseConfigurationReference = 18C23C979E40586D90A72F06 /* Pods-healapp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 6WUQHVNHBS;
 				INFOPLIST_FILE = healapp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.healapp.com.healapp;
@@ -385,6 +387,7 @@
 			baseConfigurationReference = FB47EB1A561F9EAEF8C8D280 /* Pods-healapp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 6WUQHVNHBS;
 				INFOPLIST_FILE = healapp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.healapp.com.healapp;

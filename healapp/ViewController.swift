@@ -12,10 +12,17 @@ import Firebase
 class ViewController: UIViewController {
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
+    @IBOutlet weak var caretaker: UISwitch!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        if isUserPresent() == true{
+            DispatchQueue.main.async {
+                self.performSegue(withIdentifier: "caretakersegue", sender: self)
+            }
+        }
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -64,6 +71,7 @@ class ViewController: UIViewController {
                 DataService.ds.REF_USERS.child(user!.uid).observe(.value, with: { (snapshot) in
                     if let details = snapshot.value as? AnyObject{
                         print(details)
+                        self.STORE_IN_PHONE(user_key: "user_data", userData: details as! String)
                     }
                     self.performSegue(withIdentifier: "caretakersegue", sender: self)
                 })
@@ -75,7 +83,37 @@ class ViewController: UIViewController {
         
 
     }
-
+    
+    func isUserPresent()-> Bool{
+        let preferences = UserDefaults.standard
+        let user_key = "user_data"
+        if preferences.object(forKey: user_key) == nil {
+            return false //  Doesn't exist
+        } else {
+            /*
+            let user_data = preferences.dictionary(forKey: user_key)!
+            user_info(user_data as Dictionary<String, AnyObject>)
+            let user_searches = "user_searches"
+            if let arr = preferences.array(forKey: user_searches) as? [[String:Any]] {
+                searches = arr
+            }
+            */
+            return true
+        }
+    }
+    
+    func STORE_IN_PHONE(user_key: String, userData: String){
+        let preferences = UserDefaults.standard
+        preferences.removeObject(forKey: user_key)
+        preferences.set(userData, forKey: user_key)
+        //  Save to disk
+        let didSave = preferences.synchronize()
+        if !didSave {
+            //  Couldn't save
+        }
+        
+    }
+    
     func showErrorAlert(_ title:String, msg:String) {
         
         let errorAlert = UIAlertController(title: title, message: msg, preferredStyle: UIAlertControllerStyle.alert)
