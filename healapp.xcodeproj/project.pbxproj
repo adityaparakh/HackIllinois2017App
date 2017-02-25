@@ -12,6 +12,10 @@
 		84EB91691E6160FA000DD3FD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84EB91671E6160FA000DD3FD /* Main.storyboard */; };
 		84EB916B1E6160FA000DD3FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84EB916A1E6160FA000DD3FD /* Assets.xcassets */; };
 		84EB916E1E6160FA000DD3FD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84EB916C1E6160FA000DD3FD /* LaunchScreen.storyboard */; };
+		84EB91761E616C4C000DD3FD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84EB91751E616C4C000DD3FD /* GoogleService-Info.plist */; };
+		84EB91781E616E68000DD3FD /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EB91771E616E68000DD3FD /* Constants.swift */; };
+		84EB917A1E616F2A000DD3FD /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EB91791E616F2A000DD3FD /* DataService.swift */; };
+		84EB917C1E6172A1000DD3FD /* ClientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EB917B1E6172A1000DD3FD /* ClientViewController.swift */; };
 		E1D6CD8F9F4D02479D467979 /* Pods_healapp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F14BFB9040E2C50AFEA8DE4B /* Pods_healapp.framework */; };
 /* End PBXBuildFile section */
 
@@ -24,6 +28,10 @@
 		84EB916A1E6160FA000DD3FD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		84EB916D1E6160FA000DD3FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		84EB916F1E6160FA000DD3FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84EB91751E616C4C000DD3FD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		84EB91771E616E68000DD3FD /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		84EB91791E616F2A000DD3FD /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		84EB917B1E6172A1000DD3FD /* ClientViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClientViewController.swift; sourceTree = "<group>"; };
 		F14BFB9040E2C50AFEA8DE4B /* Pods_healapp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_healapp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB47EB1A561F9EAEF8C8D280 /* Pods-healapp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-healapp.release.xcconfig"; path = "Pods/Target Support Files/Pods-healapp/Pods-healapp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -71,11 +79,15 @@
 			isa = PBXGroup;
 			children = (
 				84EB91631E6160FA000DD3FD /* AppDelegate.swift */,
+				84EB91791E616F2A000DD3FD /* DataService.swift */,
+				84EB91771E616E68000DD3FD /* Constants.swift */,
 				84EB91651E6160FA000DD3FD /* ViewController.swift */,
 				84EB91671E6160FA000DD3FD /* Main.storyboard */,
+				84EB917B1E6172A1000DD3FD /* ClientViewController.swift */,
 				84EB916A1E6160FA000DD3FD /* Assets.xcassets */,
 				84EB916C1E6160FA000DD3FD /* LaunchScreen.storyboard */,
 				84EB916F1E6160FA000DD3FD /* Info.plist */,
+				84EB91751E616C4C000DD3FD /* GoogleService-Info.plist */,
 			);
 			path = healapp;
 			sourceTree = "<group>";
@@ -151,6 +163,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				84EB916E1E6160FA000DD3FD /* LaunchScreen.storyboard in Resources */,
+				84EB91761E616C4C000DD3FD /* GoogleService-Info.plist in Resources */,
 				84EB916B1E6160FA000DD3FD /* Assets.xcassets in Resources */,
 				84EB91691E6160FA000DD3FD /* Main.storyboard in Resources */,
 			);
@@ -213,6 +226,9 @@
 			files = (
 				84EB91661E6160FA000DD3FD /* ViewController.swift in Sources */,
 				84EB91641E6160FA000DD3FD /* AppDelegate.swift in Sources */,
+				84EB91781E616E68000DD3FD /* Constants.swift in Sources */,
+				84EB917C1E6172A1000DD3FD /* ClientViewController.swift in Sources */,
+				84EB917A1E616F2A000DD3FD /* DataService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -376,6 +392,7 @@
 				84EB91741E6160FA000DD3FD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
