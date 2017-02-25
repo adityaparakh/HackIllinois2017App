@@ -43,8 +43,15 @@ class ViewController: UIViewController {
                 }
             }
             else{
-                let userData = self.email.text!
-                DataService.ds.createUser(user!.uid, user: userData ) // Create and store userdata on Firebase.
+                if(self.caretaker.isOn) {
+                    let userData = ["name": "Alena Hawk", "phone": "3125369986", "title": "Nurse", "price": 19.5, "rating": 3.0, "current-medication": "-", "allergies": "-", "previousdisease": "-"] as [String : Any]
+                    DataService.ds.createClient(user!.uid, user: userData ) // Create and store userdata on Firebase.
+                }
+                else {
+                    let userData = ["name": "Alena Hawk", "phone": "3125369986", "title": "Nurse", "price": 19.5, "rating": 3.0, "current-medication": "-", "allergies": "-", "previousdisease": "-"] as [String : Any]
+                    DataService.ds.createUser(user!.uid, user: userData ) // Create and store userdata on Firebase.
+                }
+                
                 print("signed up")
                 self.performSegue(withIdentifier: "clientsegue", sender: self)
                 
@@ -72,7 +79,7 @@ class ViewController: UIViewController {
                 
             } else {
                 if self.caretaker.isOn{
-                    // this is USEr
+                    // user
                     DataService.ds.REF_USERS.child(user!.uid).observe(.value, with: { (snapshot) in
                         if let details = snapshot.value as? AnyObject{
                             print(details)
@@ -82,7 +89,6 @@ class ViewController: UIViewController {
                     })
 
                 } else{
-                    // this is caretaer
                     DataService.ds.REF_USERS.child(user!.uid).observe(.value, with: { (snapshot) in
                         if let details = snapshot.value as? AnyObject{
                             print(details)
@@ -90,7 +96,6 @@ class ViewController: UIViewController {
                         }
                         self.performSegue(withIdentifier: "clientsegue", sender: self)
                     })
-
                 }
                 
                 
