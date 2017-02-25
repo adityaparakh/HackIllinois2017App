@@ -63,7 +63,7 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         let match = self.results[indexPath.row]
         if let cell = tableView.dequeueReusableCell(withIdentifier: "resultcell") as? ResultCell {
-            cell.create(name: match["name"] as! String, distance: match["dist"] as! String, rating: match["rating"] as! Double, price: match["price"] as! Double, profile: match["profile"] as! UIImage)
+            cell.create(name: match["name"] as! String, distance: match["dist"] as! String, rating: match["rating"] as! Double, price: match["price"] as! Double)
             return cell
         }
         else {

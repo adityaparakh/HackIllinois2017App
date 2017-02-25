@@ -29,13 +29,13 @@ class ResultCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func create(name:String, distance:String, rating: Double, price:Double, profile:UIImage) {
+    func create(name:String, distance:String, rating: Double, price:Double) {
         
         self.name.text = name
         self.distance.text = distance
         self.rating.text = "\(rating)" + " star rating"
         self.price.text = "\(price)" + "$/hr"
-        self.profileImg.image = profile
+        //self.profileImg.image = profile
         
     }
 
