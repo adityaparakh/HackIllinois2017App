@@ -15,10 +15,10 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     var results:[[String:Any]] = [
         
-        ["name": "Laura", "dist": "2 miles away from you", "image": UIImage(), "rating": 3.5, "price": 31.0],
-        ["name": "Hena", "dist": "2 miles away from you", "image": UIImage(), "rating": 3.5, "price": 31.0],
-        ["name": "Jessy", "dist": "2 miles away from you", "image": UIImage(), "rating": 3.5, "price": 31.0],
-        ["name": "Sara", "dist": "2 miles away from you", "image": UIImage(), "rating": 3.5, "price": 31.0]
+        ["name": "Laura", "title": "Nurse", "dist": "2 miles away from you", "image": UIImage(), "rating": 3.5, "price": 31.0],
+        ["name": "Hena", "title": "Mom", "dist": "2 miles away from you", "image": UIImage(), "rating": 3.5, "price": 31.0],
+        ["name": "Jessy", "title": "Nurse", "dist": "2 miles away from you", "image": UIImage(), "rating": 3.5, "price": 31.0],
+        ["name": "Sara", "title": "Nurse", "dist": "2 miles away from you", "image": UIImage(), "rating": 3.5, "price": 31.0]
     
     ]
     
@@ -65,7 +65,7 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         let match = self.results[indexPath.row]
         if let cell = tableView.dequeueReusableCell(withIdentifier: "resultcell") as? ResultCell {
-            cell.create(name: match["name"] as! String, distance: match["dist"] as! String, rating: match["rating"] as! Double, price: match["price"] as! Double)
+            cell.create(name: match["name"] as! String, distance: match["dist"] as! String, rating: match["rating"] as! Double, price: match["price"] as! Double, title:match["title"] as! String)
             return cell
         }
         else {
