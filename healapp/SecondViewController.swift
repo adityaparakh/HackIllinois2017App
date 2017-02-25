@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import CoreLocation
 import FirebaseDatabase
 
 class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
@@ -38,27 +39,29 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func loadData(){
         
+        
+        DispatchQueue.main.async {
         let ref = DataService.ds.REF_LIVE
         ref.observe(FIRDataEventType.value, with: { (snapshot) in
+            DispatchQueue.main.async {
             let users = snapshot.value as? [String : AnyObject]
             for (key, val) in users! {
+                
                 let user = DataService.ds.REF_USERS.child(key).observeSingleEvent(of: .value, with: { (snapshot) in
                     // Get user value
-                    let value = snapshot.value as? NSDictionary
-                    self.results.append(value!)
-                    print(self.results)
-                    print(value!)
-                    
+                        let value = snapshot.value as? NSDictionary
+                        self.results.append(value!)
+                        self.friendsTable.reloadData()
+                        print(self.results)
                     // ...
                 }) { (error) in
                     print(error.localizedDescription)
                 }
             }
-            print(self.results)
-            self.friendsTable.reloadData()
-            
-            // ...
+            }
         })
+        }
+        
     }
     
     /*
@@ -91,7 +94,7 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         let match = self.results[indexPath.row]
         if let cell = tableView.dequeueReusableCell(withIdentifier: "resultcell") as? ResultCell {
-            cell.create(name: match["name"] as! String, distance: match["dist"] as! String, rating: match["rating"] as! Double, price: match["price"] as! Double, title:match["title"] as! String)
+            cell.create(name: match["name"] as! String, distance: match["name"] as! String, rating: match["rating"] as! Double, price: match["price"] as! Double, title:match["title"] as! String)
             return cell
         }
         else {
@@ -100,12 +103,21 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         
     }
+
     
     /*
      
      FUNCS
      
      */
+    
+    func distCalc() {
+        
+        let fromLoc = CLLocation(latitude: 5.0, longitude: 5.0)
+        let toLoc = CLLocation(latitude: 5.0, longitude: 3.0)
+        
+        let distanceInMeters = coordinate₀.distance(from: coordinate₁)
+    }
     
     @IBAction func addFriend(_ sender: Any) {
         
