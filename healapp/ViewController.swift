@@ -23,6 +23,8 @@ class ViewController: UIViewController {
                 self.performSegue(withIdentifier: "caretakersegue", sender: self)
             }
         }
+        
+        caretaker.addTarget(self, action: #selector(ViewController.caretakerr), for: UIControlEvents.valueChanged)
 
     }
 
@@ -102,6 +104,7 @@ class ViewController: UIViewController {
             return true
         }
     }
+
     
     func STORE_IN_PHONE(user_key: String, userData: String){
         let preferences = UserDefaults.standard
@@ -113,6 +116,15 @@ class ViewController: UIViewController {
             //  Couldn't save
         }
         
+    }
+    
+    func caretakerr(){
+        if caretaker.isOn{
+            print("on")
+        }
+        else{
+            print("off")
+        }
     }
     
     func showErrorAlert(_ title:String, msg:String) {
