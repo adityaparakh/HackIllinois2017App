@@ -15,10 +15,10 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     var results:[[String:Any]] = [
         
-        ["name": "Aqueel", "dist": "2 miles away from you", "image": UIImage(), "rating": 3.5, "price": 31],
-        ["name": "Aqueel", "dist": "2 miles away from you", "image": UIImage(), "rating": 3.5, "price": 31],
-        ["name": "Aqueel", "dist": "2 miles away from you", "image": UIImage(), "rating": 3.5, "price": 31],
-        ["name": "Aqueel", "dist": "2 miles away from you", "image": UIImage(), "rating": 3.5, "price": 31]
+        ["name": "Laura", "dist": "2 miles away from you", "image": UIImage(), "rating": 3.5, "price": 31.0],
+        ["name": "Hena", "dist": "2 miles away from you", "image": UIImage(), "rating": 3.5, "price": 31.0],
+        ["name": "Jessy", "dist": "2 miles away from you", "image": UIImage(), "rating": 3.5, "price": 31.0],
+        ["name": "Sara", "dist": "2 miles away from you", "image": UIImage(), "rating": 3.5, "price": 31.0]
     
     ]
     
@@ -26,6 +26,7 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
         super.viewDidLoad()
         self.friendsTable.delegate = self
         self.friendsTable.dataSource = self
+        self.friendsTable.rowHeight = 150
         // Do any additional setup after loading the view, typically from a nib.
     }
     
@@ -42,7 +43,7 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
     {
-        return 300
+        return 100
     }
     
     
