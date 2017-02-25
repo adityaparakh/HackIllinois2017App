@@ -14,7 +14,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var caretaker: UISwitch!
-
+    var uid = ""
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -44,16 +44,19 @@ class ViewController: UIViewController {
             }
             else{
                 if(self.caretaker.isOn) {
-                    let userData = ["name": "Alena Hawk", "phone": "3125369986", "title": "Nurse", "price": 19.5, "rating": 3.0, "current-medication": "-", "allergies": "-", "previousdisease": "-"] as [String : Any]
-                    DataService.ds.createClient(user!.uid, user: userData ) // Create and store userdata on Firebase.
+                    // THIS IS THE PERSON ASKING FOR HELP.
+                    self.uid = user!.uid
+                    //DataService.ds.createClient(user!.uid, user: userData ) // Create and store userdata on Firebase.
+                    self.performSegue(withIdentifier: "profileview", sender: self)
                 }
                 else {
-                    let userData = ["name": "Alena Hawk", "phone": "3125369986", "title": "Nurse", "price": 19.5, "rating": 3.0, "current-medication": "-", "allergies": "-", "previousdisease": "-"] as [String : Any]
-                    DataService.ds.createUser(user!.uid, user: userData ) // Create and store userdata on Firebase.
+                    // THIS IS THE HELPER
+                    self.uid = user!.uid
+                    self.performSegue(withIdentifier: "caretakerprofile", sender: self) // Create and store userdata on Firebase.
                 }
                 
                 print("signed up")
-                self.performSegue(withIdentifier: "clientsegue", sender: self)
+                //self.performSegue(withIdentifier: "clientsegue", sender: self)
                 
             }
         })
@@ -105,7 +108,17 @@ class ViewController: UIViewController {
         
 
     }
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "profileview") {
+            var svc = segue.destination as! ProfileViewController;
+            svc.user = uid
+        }
+        if (segue.identifier == "caretakerprofile") {
+            var svc = segue.destination as! ProfileForCareTakerViewController;
+            svc.user = uid
+        }
+    }
+
     func isUserPresent()-> Bool{
         let preferences = UserDefaults.standard
         let user_key = "user_data"
@@ -153,5 +166,6 @@ class ViewController: UIViewController {
         self.present(errorAlert, animated: true, completion: nil)
         
     }
+    
 }
 
