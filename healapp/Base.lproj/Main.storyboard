@@ -423,6 +423,9 @@
                                                 <state key="normal" title="Message" backgroundImage="button">
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="message:" destination="TLG-KL-rGV" eventType="touchUpInside" id="zel-e8-YKo"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oMs-9l-Qve">
                                                 <rect key="frame" x="76.5" y="0.0" width="66.5" height="63.5"/>
@@ -430,6 +433,9 @@
                                                 <state key="normal" title="Cancel" backgroundImage="button">
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="cancel:" destination="TLG-KL-rGV" eventType="touchUpInside" id="FrT-vo-2Wu"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -474,16 +480,22 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y4c-PZ-gbf">
                                         <rect key="frame" x="0.0" y="0.0" width="162.5" height="60"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                        <state key="normal" title="Message" backgroundImage="button">
+                                        <state key="normal" title="Get Patient Data" backgroundImage="button">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="getpatientdata:" destination="TLG-KL-rGV" eventType="touchUpInside" id="HTB-xP-Tc3"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BhV-II-MIP">
                                         <rect key="frame" x="172.5" y="0.0" width="162.5" height="60"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                        <state key="normal" title="Cancel" backgroundImage="button">
+                                        <state key="normal" title="Directions" backgroundImage="button">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="directions:" destination="TLG-KL-rGV" eventType="touchUpInside" id="v51-j6-fgd"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -511,6 +523,9 @@
                             <constraint firstItem="Iu8-cz-MXU" firstAttribute="leading" secondItem="YKq-ci-w80" secondAttribute="leading" constant="20" id="xuY-nA-DEw"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="active" destination="Har-A0-Qx3" id="quL-Pc-lja"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GmT-vt-WDp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

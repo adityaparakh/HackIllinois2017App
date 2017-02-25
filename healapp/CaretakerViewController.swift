@@ -10,6 +10,8 @@ import UIKit
 
 class CaretakerViewController: UIViewController {
 
+    @IBOutlet weak var active: UISwitch!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,6 +23,16 @@ class CaretakerViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func message(_ sender: Any) {
+        print("message")
+    }
+    @IBAction func cancel(_ sender: Any) {
+        print("cancel")
+    }
+    @IBAction func getpatientdata(_ sender: Any) {
+    }
+    @IBAction func directions(_ sender: Any) {
+    }
 
     /*
     // MARK: - Navigation
