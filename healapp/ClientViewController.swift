@@ -23,7 +23,6 @@ class ClientViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
-        print("FUCK U!")
 
         // Do any additional setup after loading the view.
     }

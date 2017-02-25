@@ -8,22 +8,17 @@
 
 import UIKit
 import Alamofire
+import FirebaseDatabase
 
 class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var friendsTable: UITableView!
     
-    var results:[[String:Any]] = [
-        
-        ["name": "Laura", "title": "Nurse", "dist": "2 miles away from you", "image": UIImage(), "rating": 3.5, "price": 31.0],
-        ["name": "Hena", "title": "Mom", "dist": "2 miles away from you", "image": UIImage(), "rating": 3.5, "price": 31.0],
-        ["name": "Jessy", "title": "Nurse", "dist": "2 miles away from you", "image": UIImage(), "rating": 3.5, "price": 31.0],
-        ["name": "Sara", "title": "Nurse", "dist": "2 miles away from you", "image": UIImage(), "rating": 3.5, "price": 31.0]
-    
-    ]
+    var results:[NSDictionary] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        loadData()
         self.friendsTable.delegate = self
         self.friendsTable.dataSource = self
         self.friendsTable.rowHeight = 150
@@ -33,6 +28,36 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    /*
+     
+        Live data management
+     
+     */
+    
+    func loadData(){
+        
+        let ref = DataService.ds.REF_LIVE
+        ref.observe(FIRDataEventType.value, with: { (snapshot) in
+            let users = snapshot.value as? [String : AnyObject]
+            for (key, val) in users! {
+                let user = DataService.ds.REF_USERS.child(key).observeSingleEvent(of: .value, with: { (snapshot) in
+                    // Get user value
+                    let value = snapshot.value as? NSDictionary
+                    self.results.append(value!)
+                    print(value!)
+                    
+                    // ...
+                }) { (error) in
+                    print(error.localizedDescription)
+                }
+            }
+            print(self.results)
+            self.friendsTable.reloadData()
+            
+            // ...
+        })
     }
     
     /*
