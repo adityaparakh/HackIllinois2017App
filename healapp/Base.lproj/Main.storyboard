@@ -23,76 +23,112 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login" translatesAutoresizingMaskIntoConstraints="NO" id="evC-k1-IPL">
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login" translatesAutoresizingMaskIntoConstraints="NO" id="evC-k1-IPL">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="ADz-Qw-Ezt">
-                                <rect key="frame" x="36" y="235" width="137" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="ADz-Qw-Ezt">
+                                <rect key="frame" x="75" y="243" width="235" height="38"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Si-xT-eMF">
-                                        <rect key="frame" x="0.0" y="0.0" width="87.5" height="30"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pass" translatesAutoresizingMaskIntoConstraints="NO" id="eX9-Ez-c5s">
+                                        <rect key="frame" x="0.0" y="0.0" width="36" height="38"/>
+                                    </imageView>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Si-xT-eMF">
+                                        <rect key="frame" x="38" y="4" width="197" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="eX9-Ez-c5s">
-                                        <rect key="frame" x="87.5" y="0.0" width="49" height="30"/>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="eX9-Ez-c5s" firstAttribute="width" secondItem="ADz-Qw-Ezt" secondAttribute="width" multiplier="0.15" id="tgN-Ko-lFH"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="Hds-5R-ade">
+                                <rect key="frame" x="75" y="300" width="235" height="30"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="07l-gY-3Sf">
+                                        <rect key="frame" x="0.0" y="0.0" width="36" height="30"/>
                                     </imageView>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aIn-cY-6yT">
+                                        <rect key="frame" x="38" y="0.0" width="197" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
                                 </subviews>
                             </stackView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aIn-cY-6yT">
-                                <rect key="frame" x="36" y="275" width="303" height="30"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ai5-GR-4gB">
-                                <rect key="frame" x="116" y="315" width="143" height="30"/>
-                                <state key="normal" title="Sign up"/>
-                                <connections>
-                                    <action selector="signup:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EwX-tF-v0T"/>
-                                </connections>
-                            </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="gju-6A-RVT">
-                                <rect key="frame" x="26" y="355" width="323" height="30"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="gju-6A-RVT">
+                                <rect key="frame" x="75" y="355" width="235" height="60"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Already registered?" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wVT-wQ-Ci1">
-                                        <rect key="frame" x="0.0" y="0.0" width="244" height="30"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eVU-WH-moD">
-                                        <rect key="frame" x="254" y="0.0" width="69" height="30"/>
-                                        <state key="normal" title="Login"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="38w-ti-Zkp">
+                                        <rect key="frame" x="0.0" y="0.0" width="112.5" height="60"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <state key="normal" title="Forgot password?">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eVU-WH-moD">
+                                        <rect key="frame" x="122.5" y="0.0" width="112.5" height="60"/>
+                                        <state key="normal" title="Login" backgroundImage="button">
+                                            <color key="titleColor" red="1" green="0.96470588239999999" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
                                         <connections>
                                             <action selector="login:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CfY-ga-1HQ"/>
                                         </connections>
                                     </button>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="235" id="Rwp-bY-bfa"/>
+                                </constraints>
                             </stackView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="V44-jm-tbr">
                                 <rect key="frame" x="94" y="54" width="150" height="108"/>
                             </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="mI7-Nh-ioD" userLabel="Signin">
+                                <rect key="frame" x="90" y="400.5" width="189" height="166.5"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RFK-GO-xue">
+                                        <rect key="frame" x="0.0" y="0.0" width="189" height="55.5"/>
+                                        <state key="normal" image="Facebook"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZDg-Id-UcX">
+                                        <rect key="frame" x="0.0" y="55.5" width="189" height="55.5"/>
+                                        <state key="normal" image="Google"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ai5-GR-4gB">
+                                        <rect key="frame" x="0.0" y="111" width="189" height="55.5"/>
+                                        <state key="normal" title="Sign up" backgroundImage="button"/>
+                                        <connections>
+                                            <action selector="signup:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EwX-tF-v0T"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="gju-6A-RVT" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="071-Zp-CUW"/>
                             <constraint firstItem="V44-jm-tbr" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="centerX" multiplier="0.5" id="0Bp-5N-nyB"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="aIn-cY-6yT" secondAttribute="trailing" constant="20" id="7A1-hK-LML"/>
+                            <constraint firstItem="mI7-Nh-ioD" firstAttribute="leading" secondItem="gju-6A-RVT" secondAttribute="leading" multiplier="1.2" id="2pj-cz-1O9"/>
+                            <constraint firstItem="ADz-Qw-Ezt" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="centerX" multiplier="1.65" id="44O-Oe-ySL"/>
                             <constraint firstAttribute="trailing" secondItem="evC-k1-IPL" secondAttribute="trailing" id="85Y-bw-sRM"/>
-                            <constraint firstItem="gju-6A-RVT" firstAttribute="top" secondItem="ai5-GR-4gB" secondAttribute="bottom" constant="10" id="FAH-Tf-p9U"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="ai5-GR-4gB" secondAttribute="trailing" constant="100" id="NT4-3c-pXc"/>
-                            <constraint firstItem="aIn-cY-6yT" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="Wvg-Fc-7oK"/>
+                            <constraint firstItem="gju-6A-RVT" firstAttribute="top" secondItem="Hds-5R-ade" secondAttribute="bottom" constant="25" id="Ake-e8-6HH"/>
+                            <constraint firstItem="mI7-Nh-ioD" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="1.7" id="B2K-gK-lDj"/>
+                            <constraint firstItem="gju-6A-RVT" firstAttribute="leading" secondItem="Hds-5R-ade" secondAttribute="leading" id="EUJ-vD-E6Y"/>
+                            <constraint firstItem="gju-6A-RVT" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.09" id="GVC-Ri-MGD"/>
+                            <constraint firstItem="07l-gY-3Sf" firstAttribute="width" secondItem="eX9-Ez-c5s" secondAttribute="width" id="Qw5-lI-dX8"/>
+                            <constraint firstItem="mI7-Nh-ioD" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.25" id="Ra8-Iv-iMI"/>
+                            <constraint firstItem="Hds-5R-ade" firstAttribute="trailing" secondItem="ADz-Qw-Ezt" secondAttribute="trailing" id="SF5-5t-Q4L"/>
                             <constraint firstItem="V44-jm-tbr" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" multiplier="2.7" id="ZjR-dL-n1j"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="evC-k1-IPL" secondAttribute="bottom" id="arb-st-8pd"/>
                             <constraint firstItem="evC-k1-IPL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="bJR-r3-ut9"/>
+                            <constraint firstItem="Hds-5R-ade" firstAttribute="leading" secondItem="ADz-Qw-Ezt" secondAttribute="leading" id="eTZ-sU-uK6"/>
                             <constraint firstItem="evC-k1-IPL" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="gce-Bh-rNn"/>
                             <constraint firstItem="V44-jm-tbr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" multiplier="0.9" id="h2M-Yq-CKt"/>
-                            <constraint firstItem="ai5-GR-4gB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="100" id="mfO-7l-I5A"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="gju-6A-RVT" secondAttribute="trailing" constant="10" id="q9G-rJ-k59"/>
-                            <constraint firstItem="ai5-GR-4gB" firstAttribute="top" secondItem="aIn-cY-6yT" secondAttribute="bottom" constant="10" id="tpI-qL-kpv"/>
+                            <constraint firstItem="mI7-Nh-ioD" firstAttribute="trailing" secondItem="gju-6A-RVT" secondAttribute="trailing" multiplier="0.9" id="lv7-PI-PkI"/>
+                            <constraint firstItem="ADz-Qw-Ezt" firstAttribute="top" secondItem="V44-jm-tbr" secondAttribute="bottom" multiplier="1.5" id="mdf-NB-WwF"/>
+                            <constraint firstItem="Hds-5R-ade" firstAttribute="top" secondItem="ADz-Qw-Ezt" secondAttribute="bottom" constant="19" id="nM0-uf-wYA"/>
+                            <constraint firstItem="ADz-Qw-Ezt" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="centerX" multiplier="0.4" id="quR-Yk-6xX"/>
+                            <constraint firstItem="gju-6A-RVT" firstAttribute="trailing" secondItem="Hds-5R-ade" secondAttribute="trailing" id="vh5-LG-ri0"/>
                         </constraints>
                     </view>
                     <connections>
@@ -136,9 +172,13 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Facebook" width="509" height="129"/>
+        <image name="Google" width="509" height="130"/>
         <image name="Logo" width="390" height="108"/>
+        <image name="button" width="287" height="124"/>
         <image name="image" width="800" height="1200"/>
         <image name="login" width="1080" height="1920"/>
+        <image name="pass" width="33" height="38"/>
         <image name="user" width="49" height="30"/>
     </resources>
 </document>
