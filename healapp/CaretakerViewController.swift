@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class CaretakerViewController: UIViewController {
 
@@ -16,6 +17,7 @@ class CaretakerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        isonline()
         active.addTarget(self, action: #selector(CaretakerViewController.isonline), for: UIControlEvents.valueChanged)
         // Do any additional setup after loading the view.
     }
@@ -38,9 +40,11 @@ class CaretakerViewController: UIViewController {
     
     func isonline(){
         if active.isOn{
-            print("lol")
+            let dict = ["uid": FIRAuth.auth()?.currentUser?.uid, "long": 12.22, "lat": 123.445] as [String : Any]
+            DataService.ds.createLive((FIRAuth.auth()?.currentUser)!.uid, user: dict)
         }else{
-            takingpatients.text = "Not taking patients"
+            takingpatients.text = "not taking patients"
+            DataService.ds.createLive((FIRAuth.auth()?.currentUser)!.uid, user: [:])
             
         }
     }
