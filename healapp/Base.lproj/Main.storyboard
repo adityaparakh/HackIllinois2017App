@@ -378,7 +378,7 @@
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1eq-gv-mT3">
                                                                     <rect key="frame" x="76.5" y="0.0" width="66.5" height="36"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                                    <state key="normal" title="Cancel" backgroundImage="button">
+                                                                    <state key="normal" title="Book" backgroundImage="button">
                                                                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     </state>
                                                                 </button>
