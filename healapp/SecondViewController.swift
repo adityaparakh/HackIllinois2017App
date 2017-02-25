@@ -13,59 +13,25 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     @IBOutlet weak var friendsTable: UITableView!
     
-    var friends:[String] = ["Mete", "Aqueel", "Paolo"]
+    var results:[[String:Any]] = [
+        
+        ["name": "Aqueel", "dist": "2 miles away from you", "image": UIImage(), "rating": 3.5, "price": 31],
+        ["name": "Aqueel", "dist": "2 miles away from you", "image": UIImage(), "rating": 3.5, "price": 31],
+        ["name": "Aqueel", "dist": "2 miles away from you", "image": UIImage(), "rating": 3.5, "price": 31],
+        ["name": "Aqueel", "dist": "2 miles away from you", "image": UIImage(), "rating": 3.5, "price": 31]
+    
+    ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.friendsTable.delegate = self
         self.friendsTable.dataSource = self
-        loadFriends()
         // Do any additional setup after loading the view, typically from a nib.
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    func loadFriends() {
-        
-        /*
-        Alamofire.request(DB_URL + "users/" + user_id)
-            .responseJSON { response in
-                DispatchQueue.main.async {
-                    if let JSON = response.result.value as? NSDictionary{
-                        if let user = JSON["user"] as? NSDictionary {
-                            if let frnds = user["friendsList"] as? NSArray {
-                                
-                                for friend in frnds {
-                                    let item = friend as! String
-                                    print(item)
-                                    Alamofire.request(DB_URL + "users/" + item)
-                                        .responseJSON { response in
-                                            DispatchQueue.main.async {
-                                                //print(response)
-                                                if let JSON = response.result.value as? NSDictionary{
-                                                    if let user = JSON["user"] as? NSDictionary{
-                                                        if let name = user["name"] as? String {
-                                                            self.friends.append(name)
-                                                            friendList.append(name)
-                                                            friendId[name] = item
-                                                            self.friendsTable.reloadData()
-                                                        }
-                                                    }
-                                                }
-                                            }
-                                    }
-                                    
-                                    
-                                }
-                            }
-                        }
-                    }
-                }
-        }
-         */
     }
     
     /*
@@ -76,7 +42,7 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
     {
-        return 70
+        return 300
     }
     
     
@@ -89,15 +55,15 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
         return 1
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int { return friends.count
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.results.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let match = self.friends[indexPath.row]
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "ResultCell") as? ResultCell {
-            cell.name.text = match
-            print("Hello")
+        let match = self.results[indexPath.row]
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "resultcell") as? ResultCell {
+            cell.create(name: match["name"] as! String, distance: match["dist"] as! String, rating: match["rating"] as! Double, price: match["price"] as! Double, profile: match["profile"] as! UIImage)
             return cell
         }
         else {

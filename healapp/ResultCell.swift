@@ -10,7 +10,13 @@ import UIKit
 
 class ResultCell: UITableViewCell {
     
-    @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var profileImg:UIImageView!
+    @IBOutlet weak var name:UILabel!
+    @IBOutlet weak var distance:UILabel!
+    @IBOutlet weak var rating:UILabel!
+    @IBOutlet weak var price:UILabel!
+    @IBOutlet weak var choose:UIButton!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -23,6 +29,14 @@ class ResultCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    @IBAction func removeFriend(_ sender: Any) {
+    func create(name:String, distance:String, rating: Double, price:Double, profile:UIImage) {
+        
+        self.name.text = name
+        self.distance.text = distance
+        self.rating.text = "\(rating)" + " star rating"
+        self.price.text = "\(price)" + "$/hr"
+        self.profileImg.image = profile
+        
     }
+
 }
