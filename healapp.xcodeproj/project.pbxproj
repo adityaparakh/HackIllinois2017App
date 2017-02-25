@@ -17,6 +17,9 @@
 		84EB917A1E616F2A000DD3FD /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EB91791E616F2A000DD3FD /* DataService.swift */; };
 		84EB917C1E6172A1000DD3FD /* ClientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EB917B1E6172A1000DD3FD /* ClientViewController.swift */; };
 		84EB917E1E618F5A000DD3FD /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84EB917D1E618F5A000DD3FD /* MapKit.framework */; };
+		84EB91801E61CE50000DD3FD /* PickCareTakerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EB917F1E61CE50000DD3FD /* PickCareTakerViewController.swift */; };
+		84EB91821E61D121000DD3FD /* lobster.otf in Resources */ = {isa = PBXBuildFile; fileRef = 84EB91811E61D121000DD3FD /* lobster.otf */; };
+		84EB91841E61D978000DD3FD /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EB91831E61D978000DD3FD /* SecondViewController.swift */; };
 		E1D6CD8F9F4D02479D467979 /* Pods_healapp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F14BFB9040E2C50AFEA8DE4B /* Pods_healapp.framework */; };
 /* End PBXBuildFile section */
 
@@ -34,6 +37,9 @@
 		84EB91791E616F2A000DD3FD /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		84EB917B1E6172A1000DD3FD /* ClientViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClientViewController.swift; sourceTree = "<group>"; };
 		84EB917D1E618F5A000DD3FD /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		84EB917F1E61CE50000DD3FD /* PickCareTakerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickCareTakerViewController.swift; sourceTree = "<group>"; };
+		84EB91811E61D121000DD3FD /* lobster.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = lobster.otf; sourceTree = "<group>"; };
+		84EB91831E61D978000DD3FD /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		F14BFB9040E2C50AFEA8DE4B /* Pods_healapp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_healapp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB47EB1A561F9EAEF8C8D280 /* Pods-healapp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-healapp.release.xcconfig"; path = "Pods/Target Support Files/Pods-healapp/Pods-healapp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -64,6 +70,7 @@
 			isa = PBXGroup;
 			children = (
 				84EB91621E6160FA000DD3FD /* healapp */,
+				84EB91811E61D121000DD3FD /* lobster.otf */,
 				84EB91611E6160FA000DD3FD /* Products */,
 				0F11614AC536D23A47326E4F /* Pods */,
 				F459D4F66A5A00B499D7F08F /* Frameworks */,
@@ -86,7 +93,9 @@
 				84EB91771E616E68000DD3FD /* Constants.swift */,
 				84EB91651E6160FA000DD3FD /* ViewController.swift */,
 				84EB91671E6160FA000DD3FD /* Main.storyboard */,
+				84EB917F1E61CE50000DD3FD /* PickCareTakerViewController.swift */,
 				84EB917B1E6172A1000DD3FD /* ClientViewController.swift */,
+				84EB91831E61D978000DD3FD /* SecondViewController.swift */,
 				84EB916A1E6160FA000DD3FD /* Assets.xcassets */,
 				84EB916C1E6160FA000DD3FD /* LaunchScreen.storyboard */,
 				84EB916F1E6160FA000DD3FD /* Info.plist */,
@@ -167,6 +176,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				84EB916E1E6160FA000DD3FD /* LaunchScreen.storyboard in Resources */,
+				84EB91821E61D121000DD3FD /* lobster.otf in Resources */,
 				84EB91761E616C4C000DD3FD /* GoogleService-Info.plist in Resources */,
 				84EB916B1E6160FA000DD3FD /* Assets.xcassets in Resources */,
 				84EB91691E6160FA000DD3FD /* Main.storyboard in Resources */,
@@ -228,9 +238,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84EB91801E61CE50000DD3FD /* PickCareTakerViewController.swift in Sources */,
 				84EB91661E6160FA000DD3FD /* ViewController.swift in Sources */,
 				84EB91641E6160FA000DD3FD /* AppDelegate.swift in Sources */,
 				84EB91781E616E68000DD3FD /* Constants.swift in Sources */,
+				84EB91841E61D978000DD3FD /* SecondViewController.swift in Sources */,
 				84EB917C1E6172A1000DD3FD /* ClientViewController.swift in Sources */,
 				84EB917A1E616F2A000DD3FD /* DataService.swift in Sources */,
 			);

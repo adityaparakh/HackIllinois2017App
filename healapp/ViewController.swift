@@ -65,7 +65,7 @@ class ViewController: UIViewController {
                     if let details = snapshot.value as? AnyObject{
                         print(details)
                     }
-                    self.performSegue(withIdentifier: "clientsegue", sender: self)
+                    self.performSegue(withIdentifier: "caretakersegue", sender: self)
                 })
                 
                 
