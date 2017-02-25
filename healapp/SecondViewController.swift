@@ -46,6 +46,7 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
                     // Get user value
                     let value = snapshot.value as? NSDictionary
                     self.results.append(value!)
+                    print(self.results)
                     print(value!)
                     
                     // ...
