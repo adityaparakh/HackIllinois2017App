@@ -11,8 +11,6 @@ import Alamofire
 
 class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    
-    @IBOutlet weak var input: UITextField!
     @IBOutlet weak var friendsTable: UITableView!
     
     var friends:[String] = ["Mete", "Aqueel", "Paolo"]
@@ -118,11 +116,6 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBAction func addFriend(_ sender: Any) {
         
         var user:NSDictionary = [:]
-        
-        if((input.text?.characters.count)! < 2) {
-            alert(title: "Empty Friend Name", msg: "Please search for a valid friend");
-        }
-        else {
             
             /*
             Alamofire.request(DB_URL + "users/name/" + input.text!)

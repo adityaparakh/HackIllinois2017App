@@ -297,6 +297,11 @@
                                 <color key="textColor" red="0.93333333330000001" green="0.2666666667" blue="0.3294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gpi-Lw-Okg">
+                                <rect key="frame" x="67" y="130" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -305,6 +310,9 @@
                             <constraint firstAttribute="trailingMargin" secondItem="14x-4W-KBr" secondAttribute="trailing" constant="20" id="vk3-Hc-Dh0"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="friendsTable" destination="gpi-Lw-Okg" id="7QG-TO-afd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xX5-bp-dis" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
