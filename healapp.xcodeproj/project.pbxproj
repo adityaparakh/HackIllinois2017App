@@ -16,6 +16,7 @@
 		84EB91781E616E68000DD3FD /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EB91771E616E68000DD3FD /* Constants.swift */; };
 		84EB917A1E616F2A000DD3FD /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EB91791E616F2A000DD3FD /* DataService.swift */; };
 		84EB917C1E6172A1000DD3FD /* ClientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EB917B1E6172A1000DD3FD /* ClientViewController.swift */; };
+		84EB917E1E618F5A000DD3FD /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84EB917D1E618F5A000DD3FD /* MapKit.framework */; };
 		E1D6CD8F9F4D02479D467979 /* Pods_healapp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F14BFB9040E2C50AFEA8DE4B /* Pods_healapp.framework */; };
 /* End PBXBuildFile section */
 
@@ -32,6 +33,7 @@
 		84EB91771E616E68000DD3FD /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		84EB91791E616F2A000DD3FD /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		84EB917B1E6172A1000DD3FD /* ClientViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClientViewController.swift; sourceTree = "<group>"; };
+		84EB917D1E618F5A000DD3FD /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		F14BFB9040E2C50AFEA8DE4B /* Pods_healapp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_healapp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB47EB1A561F9EAEF8C8D280 /* Pods-healapp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-healapp.release.xcconfig"; path = "Pods/Target Support Files/Pods-healapp/Pods-healapp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -41,6 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84EB917E1E618F5A000DD3FD /* MapKit.framework in Frameworks */,
 				E1D6CD8F9F4D02479D467979 /* Pods_healapp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -95,6 +98,7 @@
 		F459D4F66A5A00B499D7F08F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				84EB917D1E618F5A000DD3FD /* MapKit.framework */,
 				F14BFB9040E2C50AFEA8DE4B /* Pods_healapp.framework */,
 			);
 			name = Frameworks;
