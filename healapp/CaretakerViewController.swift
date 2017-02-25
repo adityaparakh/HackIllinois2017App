@@ -11,10 +11,12 @@ import UIKit
 class CaretakerViewController: UIViewController {
 
     @IBOutlet weak var active: UISwitch!
+    @IBOutlet weak var patients: UIView!
+    @IBOutlet weak var takingpatients: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        active.addTarget(self, action: #selector(CaretakerViewController.isonline), for: UIControlEvents.valueChanged)
         // Do any additional setup after loading the view.
     }
 
@@ -32,6 +34,15 @@ class CaretakerViewController: UIViewController {
     @IBAction func getpatientdata(_ sender: Any) {
     }
     @IBAction func directions(_ sender: Any) {
+    }
+    
+    func isonline(){
+        if active.isOn{
+            print("lol")
+        }else{
+            takingpatients.text = "Not taking patients"
+            
+        }
     }
 
     /*
