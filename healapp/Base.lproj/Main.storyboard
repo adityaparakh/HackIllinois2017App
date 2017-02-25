@@ -297,7 +297,7 @@
                                 <rect key="frame" x="66" y="132.5" width="243" height="484.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="fGi-4d-pwI">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="resultcell" id="fGi-4d-pwI" customClass="ResultCell" customModule="healapp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="243" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fGi-4d-pwI" id="oz4-So-Qyo">
@@ -361,17 +361,36 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2hA-l5-RYV">
-                                <rect key="frame" x="66" y="292" width="243" height="133.5"/>
+                                <rect key="frame" x="66" y="292" width="243" height="107"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="card-bg" translatesAutoresizingMaskIntoConstraints="NO" id="Iwe-2J-Wbe">
-                                        <rect key="frame" x="0.0" y="0.0" width="243" height="133.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="243" height="107"/>
                                     </imageView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vPS-L9-YMS">
+                                        <rect key="frame" x="0.0" y="0.0" width="97" height="107"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pic" translatesAutoresizingMaskIntoConstraints="NO" id="Cte-uf-g7V">
+                                                <rect key="frame" x="0.0" y="0.0" width="97" height="107"/>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="Cte-uf-g7V" firstAttribute="leading" secondItem="vPS-L9-YMS" secondAttribute="leading" id="czj-D2-bME"/>
+                                            <constraint firstAttribute="trailing" secondItem="Cte-uf-g7V" secondAttribute="trailing" id="gNI-ah-m1b"/>
+                                            <constraint firstAttribute="bottom" secondItem="Cte-uf-g7V" secondAttribute="bottom" id="gfw-dM-aws"/>
+                                            <constraint firstItem="Cte-uf-g7V" firstAttribute="top" secondItem="vPS-L9-YMS" secondAttribute="top" id="uTv-TE-CH7"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="Iwe-2J-Wbe" secondAttribute="bottom" id="4os-9K-BKC"/>
+                                    <constraint firstItem="vPS-L9-YMS" firstAttribute="leading" secondItem="2hA-l5-RYV" secondAttribute="leading" id="EFF-dQ-2Y6"/>
+                                    <constraint firstItem="vPS-L9-YMS" firstAttribute="top" secondItem="2hA-l5-RYV" secondAttribute="top" id="EnG-6X-PQ2"/>
+                                    <constraint firstAttribute="bottom" secondItem="vPS-L9-YMS" secondAttribute="bottom" id="Mwu-v7-kAn"/>
                                     <constraint firstItem="Iwe-2J-Wbe" firstAttribute="top" secondItem="2hA-l5-RYV" secondAttribute="top" id="TFD-oK-5jk"/>
                                     <constraint firstAttribute="trailing" secondItem="Iwe-2J-Wbe" secondAttribute="trailing" id="V98-UN-sEm"/>
+                                    <constraint firstItem="vPS-L9-YMS" firstAttribute="trailing" secondItem="2hA-l5-RYV" secondAttribute="centerX" multiplier="0.8" id="XJ4-fX-cvL"/>
                                     <constraint firstItem="Iwe-2J-Wbe" firstAttribute="leading" secondItem="2hA-l5-RYV" secondAttribute="leading" id="w6c-MW-30t"/>
                                 </constraints>
                             </view>
@@ -381,7 +400,7 @@
                             <constraint firstItem="2hA-l5-RYV" firstAttribute="top" secondItem="Huw-PU-ucE" secondAttribute="bottom" constant="25" id="5Zh-Yk-Gtp"/>
                             <constraint firstAttribute="trailingMargin" secondItem="2hA-l5-RYV" secondAttribute="trailing" constant="50" id="6N7-ie-pL5"/>
                             <constraint firstItem="2hA-l5-RYV" firstAttribute="leading" secondItem="DdF-h0-pw7" secondAttribute="leadingMargin" constant="50" id="FtG-yY-34j"/>
-                            <constraint firstItem="2hA-l5-RYV" firstAttribute="height" secondItem="Huw-PU-ucE" secondAttribute="height" multiplier="0.5" id="M9S-s8-IGp"/>
+                            <constraint firstItem="2hA-l5-RYV" firstAttribute="height" secondItem="Huw-PU-ucE" secondAttribute="height" multiplier="0.4" id="M9S-s8-IGp"/>
                             <constraint firstAttribute="trailing" secondItem="Huw-PU-ucE" secondAttribute="trailing" id="TwV-fg-9SB"/>
                             <constraint firstItem="Huw-PU-ucE" firstAttribute="height" secondItem="DdF-h0-pw7" secondAttribute="height" multiplier="0.4" id="Znm-Ty-qT7"/>
                             <constraint firstItem="Huw-PU-ucE" firstAttribute="leading" secondItem="DdF-h0-pw7" secondAttribute="leading" id="hxg-rx-27v"/>
@@ -402,6 +421,7 @@
         <image name="button" width="287" height="124"/>
         <image name="card-bg" width="946" height="296"/>
         <image name="pass" width="33" height="38"/>
+        <image name="pic" width="187" height="187"/>
         <image name="user" width="49" height="30"/>
     </resources>
 </document>
