@@ -12,9 +12,11 @@
 		84EB91691E6160FA000DD3FD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84EB91671E6160FA000DD3FD /* Main.storyboard */; };
 		84EB916B1E6160FA000DD3FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84EB916A1E6160FA000DD3FD /* Assets.xcassets */; };
 		84EB916E1E6160FA000DD3FD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84EB916C1E6160FA000DD3FD /* LaunchScreen.storyboard */; };
+		E1D6CD8F9F4D02479D467979 /* Pods_healapp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F14BFB9040E2C50AFEA8DE4B /* Pods_healapp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		18C23C979E40586D90A72F06 /* Pods-healapp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-healapp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-healapp/Pods-healapp.debug.xcconfig"; sourceTree = "<group>"; };
 		84EB91601E6160FA000DD3FD /* healapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = healapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84EB91631E6160FA000DD3FD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84EB91651E6160FA000DD3FD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +24,8 @@
 		84EB916A1E6160FA000DD3FD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		84EB916D1E6160FA000DD3FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		84EB916F1E6160FA000DD3FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F14BFB9040E2C50AFEA8DE4B /* Pods_healapp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_healapp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB47EB1A561F9EAEF8C8D280 /* Pods-healapp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-healapp.release.xcconfig"; path = "Pods/Target Support Files/Pods-healapp/Pods-healapp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +33,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1D6CD8F9F4D02479D467979 /* Pods_healapp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0F11614AC536D23A47326E4F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				18C23C979E40586D90A72F06 /* Pods-healapp.debug.xcconfig */,
+				FB47EB1A561F9EAEF8C8D280 /* Pods-healapp.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		84EB91571E6160FA000DD3FD = {
 			isa = PBXGroup;
 			children = (
 				84EB91621E6160FA000DD3FD /* healapp */,
 				84EB91611E6160FA000DD3FD /* Products */,
+				0F11614AC536D23A47326E4F /* Pods */,
+				F459D4F66A5A00B499D7F08F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +80,14 @@
 			path = healapp;
 			sourceTree = "<group>";
 		};
+		F459D4F66A5A00B499D7F08F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F14BFB9040E2C50AFEA8DE4B /* Pods_healapp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,9 +95,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 84EB91721E6160FA000DD3FD /* Build configuration list for PBXNativeTarget "healapp" */;
 			buildPhases = (
+				38A857163AC55879CCE560AA /* [CP] Check Pods Manifest.lock */,
 				84EB915C1E6160FA000DD3FD /* Sources */,
 				84EB915D1E6160FA000DD3FD /* Frameworks */,
 				84EB915E1E6160FA000DD3FD /* Resources */,
+				EFF2B409603C250082E9C165 /* [CP] Embed Pods Frameworks */,
+				0083C48F24749776B76554C3 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -130,6 +157,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0083C48F24749776B76554C3 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-healapp/Pods-healapp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		38A857163AC55879CCE560AA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		EFF2B409603C250082E9C165 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-healapp/Pods-healapp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		84EB915C1E6160FA000DD3FD /* Sources */ = {
@@ -258,6 +333,7 @@
 		};
 		84EB91731E6160FA000DD3FD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 18C23C979E40586D90A72F06 /* Pods-healapp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = healapp/Info.plist;
@@ -270,6 +346,7 @@
 		};
 		84EB91741E6160FA000DD3FD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FB47EB1A561F9EAEF8C8D280 /* Pods-healapp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = healapp/Info.plist;
