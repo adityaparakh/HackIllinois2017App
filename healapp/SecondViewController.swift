@@ -10,15 +10,25 @@ import UIKit
 import Alamofire
 import CoreLocation
 import FirebaseDatabase
+import MapKit
 
-class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, CLLocationManagerDelegate  {
     
     @IBOutlet weak var friendsTable: UITableView!
     
     var results:[NSDictionary] = []
+    var locationManager: CLLocationManager = CLLocationManager()
+    var loc:CLLocation? = nil
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.delegate = self
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
+        
         loadData()
         self.friendsTable.delegate = self
         self.friendsTable.dataSource = self
@@ -33,24 +43,51 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     /*
      
+     */
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if let location = locations.first {
+            print("Found user's location: \(location)")
+            self.loc = location
+        }
+        else {
+            print("YOLO")
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print("Failed to find user's location: \(error.localizedDescription)")
+    }
+
+    
+    /*
+     
         Live data management
      
      */
     
     func loadData(){
         
-        
+        locationManager.requestLocation()
         DispatchQueue.main.async {
         let ref = DataService.ds.REF_LIVE
         ref.observe(FIRDataEventType.value, with: { (snapshot) in
             DispatchQueue.main.async {
             let users = snapshot.value as? [String : AnyObject]
             for (key, val) in users! {
-                
+                let d = val as! Dictionary<String, AnyObject>
                 let user = DataService.ds.REF_USERS.child(key).observeSingleEvent(of: .value, with: { (snapshot) in
                     // Get user value
-                        let value = snapshot.value as? NSDictionary
-                        self.results.append(value!)
+                    var value = snapshot.value as! Dictionary<String, AnyObject>
+                    let dt = [
+                        "name":value["name"],
+                        "phone":value["phone"],
+                        "hourly":value["hourly"],
+                        "rating":3.5,
+                        "title":value["title"],
+                        "distance": self.distCalc(gX: d["lat"] as! Double, gY: d["long"] as! Double) 
+                    ] as [String : Any]
+                        self.results.append(dt as NSDictionary)
                         self.friendsTable.reloadData()
                         print(self.results)
                     // ...
@@ -94,7 +131,7 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         let match = self.results[indexPath.row]
         if let cell = tableView.dequeueReusableCell(withIdentifier: "resultcell") as? ResultCell {
-            cell.create(name: match["name"] as! String, distance: match["name"] as! String, rating: match["rating"] as! Double, price: match["price"] as! Double, title:match["title"] as! String)
+            cell.create(name: match["name"] as! String, distance: "\(match["distance"] as! Double)", rating: 3.5, price: Double(match["hourly"] as! String)!, title: match["title"] as! String)
             return cell
         }
         else {
@@ -111,12 +148,11 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
      
      */
     
-    func distCalc() {
+    func distCalc(gX: Double, gY: Double) -> Double {
         
-        let fromLoc = CLLocation(latitude: 5.0, longitude: 5.0)
-        let toLoc = CLLocation(latitude: 5.0, longitude: 3.0)
+        let fromLoc = CLLocation(latitude: gX, longitude: gY)
         
-        let distanceInMeters = coordinate₀.distance(from: coordinate₁)
+        return self.loc!.distance(from: fromLoc)
     }
     
     @IBAction func addFriend(_ sender: Any) {
