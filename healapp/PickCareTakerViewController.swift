@@ -14,13 +14,10 @@ import Alamofire
 class PickCareTakerViewController: UIViewController, CLLocationManagerDelegate, UITextViewDelegate {
 
     @IBOutlet weak var query: UITextView!
-    
     var locationManager: CLLocationManager = CLLocationManager()
-    
-    @IBOutlet weak var textview: UITextView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        textview.delegate = self
+        query.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
@@ -29,7 +26,7 @@ class PickCareTakerViewController: UIViewController, CLLocationManagerDelegate, 
         // Do any additional setup after loading the view.
     }
     func textViewDidBeginEditing(_ textView: UITextView) {
-        textview.text = ""
+        query.text = ""
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -50,15 +47,24 @@ class PickCareTakerViewController: UIViewController, CLLocationManagerDelegate, 
         let body = ["query": queries]
         Alamofire.request(DB_URL, method: .post, parameters: body,encoding: JSONEncoding.default, headers: nil).responseJSON {
             response in
-            switch response.result {
+            DispatchQueue.main.async{
+            switch response.result  {
             case .success:
                 print(response)
+                if let ress = response.result.value as? Dictionary<String, Any>{
+                    DISEASE = ress["title"] as! String
+                    IMOCODE = ress["code"] as! String
+                    print(DISEASE)
+                    print(IMOCODE)
+                }
                 
+                self.performSegue(withIdentifier: "topicker", sender: self)
                 break
             case .failure(let error):
                 
                 print(error)
             }
+        }
         }
     }
     
