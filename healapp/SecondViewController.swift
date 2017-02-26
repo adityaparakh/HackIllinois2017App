@@ -21,7 +21,7 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
     var locationManager: CLLocationManager = CLLocationManager()
     var loc:CLLocation? = nil
     var i = 0;
-
+    var boop:[String:AnyObject] = [:]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -122,6 +122,7 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let picked = results[indexPath.row] as! [String:Any]
+        boop = picked as [String : AnyObject]
         let preferences = UserDefaults.standard
         let uid = preferences.string(forKey: "uid")
         DataService.ds.REF_CLIENTS.child(uid!).observeSingleEvent(of: .value, with: { (snapshot) in
@@ -180,5 +181,12 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
         self.present(alert, animated: true, completion: nil)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "bookedsegue") {
+            var svc = segue.destination as! UserFinalViewController
+            svc.userData = boop
+        }
+    }
+
     
 }

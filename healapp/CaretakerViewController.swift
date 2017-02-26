@@ -18,6 +18,10 @@ class CaretakerViewController: UIViewController, CLLocationManagerDelegate  {
     @IBOutlet weak var takingpatients: UILabel!
     @IBOutlet weak var patientstack: UIStackView!
     @IBOutlet weak var patienton: UIView!
+    @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var onlineoronsite: UILabel!
+    @IBOutlet weak var distance: UILabel!
+    @IBOutlet weak var reviews: UILabel!
     
     var locationManager: CLLocationManager = CLLocationManager()
     var loc:CLLocation? = nil
@@ -74,13 +78,13 @@ class CaretakerViewController: UIViewController, CLLocationManagerDelegate  {
             
             patients.isHidden = false
             patientstack.isHidden = false
-            patienton.isHidden = false
+            patienton.isHidden = true
         }else{
             takingpatients.text = "Not taking patients"
             DataService.ds.createLive((FIRAuth.auth()?.currentUser)!.uid, user: [:])
             patients.isHidden = true
             patientstack.isHidden = true
-            patienton.isHidden = true
+            patienton.isHidden = false
         }
     }
     

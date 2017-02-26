@@ -335,7 +335,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="w44-Wx-veP">
-                                <rect key="frame" x="116" y="107" width="143" height="31"/>
+                                <rect key="frame" x="116" y="106.5" width="143" height="31"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hx5-A2-jpB">
                                         <rect key="frame" x="0.0" y="0.0" width="22" height="31"/>
@@ -481,7 +481,7 @@
                                 <rect key="frame" x="36" y="269" width="303" height="217"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Turn on app to take patients" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uny-PL-cy6">
-                                        <rect key="frame" x="20.5" y="96.5" width="262" height="25.5"/>
+                                        <rect key="frame" x="21" y="96" width="262" height="25.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -548,9 +548,13 @@
                     </view>
                     <connections>
                         <outlet property="active" destination="Har-A0-Qx3" id="quL-Pc-lja"/>
+                        <outlet property="distance" destination="UWM-Rn-QME" id="F7d-st-iDH"/>
+                        <outlet property="name" destination="Up4-qg-qP6" id="CIU-8s-Fpn"/>
+                        <outlet property="onlineoronsite" destination="APm-2l-bKH" id="Zxa-fj-AdU"/>
                         <outlet property="patienton" destination="seS-Pi-0bR" id="Roa-3Y-anG"/>
                         <outlet property="patients" destination="DUS-qj-aEx" id="i2y-Cb-bjR"/>
                         <outlet property="patientstack" destination="Iu8-cz-MXU" id="rkx-Zh-lH8"/>
+                        <outlet property="reviews" destination="MOv-sh-XvD" id="zmo-x3-aks"/>
                         <outlet property="takingpatients" destination="547-IM-qHN" id="BbN-Te-6dQ"/>
                     </connections>
                 </viewController>
@@ -859,10 +863,10 @@
             </objects>
             <point key="canvasLocation" x="2498.4000000000001" y="122.78860569715144"/>
         </scene>
-        <!--View Controller-->
+        <!--User Final View Controller-->
         <scene sceneID="rTJ-d2-dkU">
             <objects>
-                <viewController id="6hV-kV-UCc" sceneMemberID="viewController">
+                <viewController id="6hV-kV-UCc" customClass="UserFinalViewController" customModule="healapp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Oql-Ms-DMD"/>
                         <viewControllerLayoutGuide type="bottom" id="iPs-Cy-UgZ"/>
@@ -894,13 +898,13 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="197" height="16"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Melissa Ronald" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="din-xp-UzO">
-                                                        <rect key="frame" x="0.0" y="0.0" width="155.5" height="16"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="97" height="16"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
                                                         <color key="textColor" red="0.93333333330000001" green="0.2666666667" blue="0.3294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="5 stars" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mKj-wU-F9j">
-                                                        <rect key="frame" x="155.5" y="0.0" width="41.5" height="16"/>
+                                                        <rect key="frame" x="97" y="0.0" width="100" height="16"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -1076,6 +1080,12 @@
                             <constraint firstItem="Ro6-Jr-X7M" firstAttribute="leading" secondItem="DdF-h0-pw7" secondAttribute="leading" id="x6f-Pr-pm3"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="distance" destination="5yW-do-LPv" id="Lrk-mI-tcv"/>
+                        <outlet property="name" destination="din-xp-UzO" id="sWt-jh-h50"/>
+                        <outlet property="reviews" destination="Ebz-nU-6di" id="ej4-Sd-ccS"/>
+                        <outlet property="tittle" destination="gMN-lX-Uel" id="7m7-kS-Ufy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a8w-Id-xu0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
