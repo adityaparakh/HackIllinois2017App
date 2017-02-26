@@ -144,7 +144,7 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         let match = self.results[indexPath.row]
         if let cell = tableView.dequeueReusableCell(withIdentifier: "resultcell") as? ResultCell {
-            cell.create(name: match["name"] as! String, distance: "\(match["distance"] as! Double)", rating: 45, price: Double(match["hourly"] as! String)!, title: match["title"] as! String)
+            cell.create(name: match["name"] as! String, distance: "\(match["distance"] as! Int)", rating: 45, price: Double(match["hourly"] as! String)!, title: match["title"] as! String)
             return cell
         }
         else {
@@ -161,7 +161,7 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
      
      */
     
-    func distCalc(gX: Double, gY: Double) -> Double {
+    func distCalc(gX: Double, gY: Double) -> Int {
         
         let fromLoc = CLLocation(latitude: gX, longitude: gY)
         return self.loc!.distance(from: fromLoc)/1649
