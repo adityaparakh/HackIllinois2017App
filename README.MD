@@ -10,26 +10,25 @@ We inspire to improve the life of people everywhere in the world with the help o
 Heal is platform for people in need of care, assistance and help to find people willing to help you through difficult times. Whether you are sick and home alone or you are a senior citizen who requires assistance to facilitate and make life easy, Heal provides a service to give you relief when it comes to this. Our goal is to create a uber-service for caregivers to reach out to people. Seniors, who fail to receive support from their family or live privately in an isolated place, but require extreme need and care during their feeble age, can use and benefit from this app extensively. Through this iOS app, whenever a person is experiencing moderate to strong illness, by typing in the symptoms, he/she is experiencing into the app; the nearest available caregiver available for attending to the situation would be contacted. The caregiver would be provided specific information regarding the symptoms the respective person is facing and the possible category of health disease the symptoms may possibly fall into.
    
 #Documentation
-All View Controllers are in Views Group in Xcode
-There is only one target that is healapp
-Use pod file to update dependencies
-Run pod update to update your local forked repository to install dependencies
-Use xcsworkspace file to open project
 
-
-#Swift 3 and iOS 10 dependency
-All View Controllers are in Views Group in Xcode
-There is only one target that is healapp
-Use pod file to update dependencies
-Run pod update to update your local forked repository to install dependencies
-Use xcsworkspace file to open project
+- All View Controllers are in Views Group in Xcode
+- There is only one target that is healapp
+- Use pod file to update dependencies
+- Run pod update to update your local forked repository to install dependencies
+- Use xcsworkspace file to open project
+- Swift 3 and iOS 10 dependency
+- All View Controllers are in Views Group in Xcode
+- There is only one target that is healapp
+- Use pod file to update dependencies
+- Run pod update to update your local forked repository to install dependencies
+- Use xcsworkspace file to open project
  
 
 #How it was built
 
 The caregiver would be provided specific information regarding the symptoms the respective person is facing and the possible category of health disease the symptoms may possibly fall into. For this hack, the information provided to the caregiver, was retrieved from IMO’s database through the use of their API. Using the api key provided by IMO, we were able to request authorization to access data from IMO’s database using specific health-tem keywords. The data obtained, was in the form of JSON (JavaScript Object Notation), and was infused into a REST API. This API was deployed in order to transmit data from the front-end to the back-end and vice versa. Our front-end was built in an iOS platform which is the User Interface for the customers and caregivers that use this app. The database and server for which the caregivers contacts and the customers accounts are stored is in: Firebase.     
 
-#Challenges faced
+#Challenges Faced
 Requesting authorization from IMO to access their data in their database using the api key and api secret (IPL)
 Implementing the REST API in flask
 iOS?
