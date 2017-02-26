@@ -8,16 +8,23 @@
 
 import UIKit
 import Firebase
-
-class ViewController: UIViewController {
+import CoreLocation
+class ViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var caretaker: UISwitch!
     var uid = ""
+    var locationManager: CLLocationManager = CLLocationManager()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.delegate = self
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.requestLocation()
+
         if isUserPresent() == true{
             DispatchQueue.main.async {
                 self.performSegue(withIdentifier: "caretakersegue", sender: self)
@@ -168,6 +175,20 @@ class ViewController: UIViewController {
         errorAlert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
         self.present(errorAlert, animated: true, completion: nil)
         
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if let location = locations.first {
+            print("Found user's location: \(location)")
+            LOCATION_CON = location
+        }
+        else {
+            print("YOLO")
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print("Failed to find user's location: \(error.localizedDescription)")
     }
     
 }

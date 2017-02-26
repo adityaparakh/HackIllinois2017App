@@ -19,13 +19,14 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     var results:[NSDictionary] = []
     var locationManager: CLLocationManager = CLLocationManager()
-    var loc:CLLocation? = nil
+    var loc:CLLocation! = LOCATION_CON
     var i = 0;
     var boop:[String:AnyObject] = [:]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        print("location")
+        print(loc)
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
@@ -175,6 +176,8 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
      FUNCS
      
      */
+    @IBAction func unwindToMenu(segue: UIStoryboardSegue) {
+    }
     
     func distCalc(gX: Double, gY: Double) -> Int {
         

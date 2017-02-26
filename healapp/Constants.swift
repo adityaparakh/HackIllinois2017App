@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+import CoreLocation
 
 let USER_NOT_FOUND = 17011 // USER DOES NOT EXIST
 let WRONG_PASSWORD = 17009 // WRONG PASSWORD
@@ -15,3 +15,4 @@ let ACCOUNT_EXIST = 17007 // ACCOUNT ALREADY EXISTS
 
 var DISEASE = ""
 var IMOCODE = ""
+var LOCATION_CON:CLLocation? = nil

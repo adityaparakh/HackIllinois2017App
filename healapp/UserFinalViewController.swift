@@ -34,6 +34,9 @@ class UserFinalViewController: UIViewController {
     }
     
 
+    @IBAction func backbtn(_ sender: Any) {
+        self.performSegue(withIdentifier: "unwind", sender: self)
+    }
     /*
     // MARK: - Navigation
 

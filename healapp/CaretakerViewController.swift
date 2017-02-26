@@ -28,14 +28,16 @@ class CaretakerViewController: UIViewController, CLLocationManagerDelegate  {
     var patient:NSDictionary = [:]
     
     var locationManager: CLLocationManager = CLLocationManager()
-    var loc:CLLocation? = nil
+    var loc:CLLocation? = LOCATION_CON
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        /*
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
         locationManager.requestLocation()
+ */
         isonline()
         self.loadData()
         active.addTarget(self, action: #selector(CaretakerViewController.isonline), for: UIControlEvents.valueChanged)
