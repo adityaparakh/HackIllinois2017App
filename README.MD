@@ -1,4 +1,5 @@
-#HEAL
+HEAL
+=====
 ‘Uber for people in need of care’
 
 #Inspiration:
@@ -41,7 +42,7 @@ Firebase powered live tracking of people near you available to provide help to p
 Matches you to the best fit in terms of treating your sickness/issues (Uses IMO API to find professionals who can treat your symptoms)
 Easy on site service using Map integration
 
-	Quick Diagnosis and Summary
+Quick Diagnosis and Summary
 
 Professional caretakers like doctors, consultants and physicians will get a quick diagnosis of what the sickness might be.
 They can get a quick profile of patient’s medical profile like allergies, medication taken, past history etc 
