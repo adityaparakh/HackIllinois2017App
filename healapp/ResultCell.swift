@@ -33,9 +33,9 @@ class ResultCell: UITableViewCell {
     func create(name:String, distance:String, rating: Double, price:Double, title:String) {
         
         self.name.text = name
-        self.distance.text = distance
+        self.distance.text = "\(distance)" + " miles"
         self.rating.text = "\(rating)" + " reviews"
-        self.price.text = "$\(price)" + "hr"
+        self.price.text = "$\(price)" + "/hr"
         self.title.text = title
         //self.profileImg.image = profile
         
