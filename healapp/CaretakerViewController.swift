@@ -10,9 +10,11 @@ import UIKit
 import FirebaseAuth
 import CoreLocation
 import FirebaseDatabase
+import MessageUI
 
 class CaretakerViewController: UIViewController, CLLocationManagerDelegate  {
 
+    @IBOutlet weak var patientText: UITextView!
     @IBOutlet weak var active: UISwitch!
     @IBOutlet weak var patients: UIView!
     @IBOutlet weak var takingpatients: UILabel!
@@ -21,7 +23,8 @@ class CaretakerViewController: UIViewController, CLLocationManagerDelegate  {
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var onlineoronsite: UILabel!
     @IBOutlet weak var distance: UILabel!
-    @IBOutlet weak var reviews: UILabel!
+    
+    var patient:NSDictionary = [:]
     
     var locationManager: CLLocationManager = CLLocationManager()
     var loc:CLLocation? = nil
@@ -33,6 +36,7 @@ class CaretakerViewController: UIViewController, CLLocationManagerDelegate  {
         locationManager.requestWhenInUseAuthorization()
         locationManager.requestLocation()
         isonline()
+        self.loadData()
         active.addTarget(self, action: #selector(CaretakerViewController.isonline), for: UIControlEvents.valueChanged)
         // Do any additional setup after loading the view.
     }
@@ -45,14 +49,13 @@ class CaretakerViewController: UIViewController, CLLocationManagerDelegate  {
     func loadData() {
         let pref = UserDefaults.standard
         let uid = pref.string(forKey: "uid")
-        DataService.ds.REF_CLIENTS.child(uid!).observeSingleEvent(of: .value, with: { (snapshot) in
+        DataService.ds.REF_USERS.child(uid!).observeSingleEvent(of: .value, with: { (snapshot) in
             // Get user value
             let value = snapshot.value as? NSDictionary
-            if let active = value?["active"] as? NSDictionary {
-                
-            }
-            else {
-                
+            if let active2 = value?["active"] as? NSDictionary {
+                print("hi")
+                self.patient = active2
+                self.name.text = active2["name"] as? String
             }
             // ...
         }) { (error) in
@@ -60,15 +63,22 @@ class CaretakerViewController: UIViewController, CLLocationManagerDelegate  {
         }    }
     
     @IBAction func message(_ sender: Any) {
-        print("message")
+        UIApplication.shared.openURL(URL(string: "sms://" + "\(self.patient["phone"])")!)
     }
     @IBAction func cancel(_ sender: Any) {
         print("cancel")
     }
     @IBAction func getpatientdata(_ sender: Any) {
         
+        let pref = UserDefaults.standard
+        print(pref.string(forKey: "uid"))
+        self.patientText.text = "Allergies: \(self.patient["allergies"])\n" +
+                                "Medications: \(self.patient["current-medication"])\n" +
+                                "Phone: \(self.patient["phone"])\n" +
+                                "previousdisease: \(self.patient["allergies"])\n"
     }
     @IBAction func directions(_ sender: Any) {
+        
     }
     
     func isonline(){
