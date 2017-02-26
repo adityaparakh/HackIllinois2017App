@@ -832,7 +832,7 @@
                                 <rect key="frame" x="164" y="629" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
-                                    <segue destination="6hV-kV-UCc" kind="show" id="JVp-i3-JLx"/>
+                                    <segue destination="6hV-kV-UCc" kind="show" identifier="bookedsegue" id="JVp-i3-JLx"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -894,13 +894,13 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="197" height="16"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Melissa Ronald" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="din-xp-UzO">
-                                                        <rect key="frame" x="0.0" y="0.0" width="97" height="16"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="155.5" height="16"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
                                                         <color key="textColor" red="0.93333333330000001" green="0.2666666667" blue="0.3294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="5 stars" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mKj-wU-F9j">
-                                                        <rect key="frame" x="97" y="0.0" width="100" height="16"/>
+                                                        <rect key="frame" x="155.5" y="0.0" width="41.5" height="16"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -997,9 +997,9 @@
                                     <constraint firstItem="Iwe-2J-Wbe" firstAttribute="leading" secondItem="2hA-l5-RYV" secondAttribute="leading" id="w6c-MW-30t"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Symptoms given" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Cj-XU-CN2">
-                                <rect key="frame" x="36" y="438" width="303" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Based on your symptoms, you might potentially have:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Cj-XU-CN2">
+                                <rect key="frame" x="36" y="438" width="303" height="45.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
