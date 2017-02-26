@@ -11,6 +11,7 @@ import FirebaseAuth
 import CoreLocation
 import FirebaseDatabase
 import MessageUI
+import MapKit
 
 class CaretakerViewController: UIViewController, CLLocationManagerDelegate  {
 
@@ -63,7 +64,7 @@ class CaretakerViewController: UIViewController, CLLocationManagerDelegate  {
         }    }
     
     @IBAction func message(_ sender: Any) {
-        UIApplication.shared.openURL(URL(string: "sms://" + "\(self.patient["phone"])")!)
+        UIApplication.shared.open(URL(string: "sms:" + "\(self.patient["phone"])")!)
     }
     @IBAction func cancel(_ sender: Any) {
         print("cancel")
@@ -78,6 +79,11 @@ class CaretakerViewController: UIViewController, CLLocationManagerDelegate  {
                                 "previousdisease: \(self.patient["allergies"])\n"
     }
     @IBAction func directions(_ sender: Any) {
+        
+        if let url = URL(string: "http://maps.apple.com/?saddr=\(self.loc?.coordinate.latitude),\(self.loc?.coordinate.longitude)&daddr=\(self.patient["lat"]),\(self.patient["long"])") {
+            UIApplication.shared.open(url)
+        }
+        
         
     }
     

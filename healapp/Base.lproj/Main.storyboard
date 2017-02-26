@@ -636,7 +636,7 @@
                                 </constraints>
                                 <state key="normal" backgroundImage="Button-2"/>
                                 <connections>
-                                    <segue destination="nM1-xF-dHJ" kind="show" id="ZzS-9R-nL9"/>
+                                    <action selector="connect:" destination="E1y-fV-dAK" eventType="touchUpInside" id="42j-p3-kfE"/>
                                 </connections>
                             </button>
                         </subviews>
