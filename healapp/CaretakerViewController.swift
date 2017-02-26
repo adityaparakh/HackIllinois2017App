@@ -82,7 +82,11 @@ class CaretakerViewController: UIViewController, CLLocationManagerDelegate  {
     }
     @IBAction func directions(_ sender: Any) {
         
-        if let url = URL(string: "http://maps.apple.com/?saddr=\(self.loc?.coordinate.longitude),\(self.loc?.coordinate.latitude)&daddr=\(self.patient["long"]),\(self.patient["lat"])") {
+        let lat = self.patient["lat"] as! String!
+        let long = self.patient["long"] as! String!
+        
+        if let url = URL(string: "http://maps.apple.com/?daddr=\(lat),\(long)") {
+            print("http://maps.apple.com/?daddr=\(self.patient["long"]),\(self.patient["lat"])")
             UIApplication.shared.open(url)
         }
         
