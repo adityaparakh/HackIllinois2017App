@@ -24,6 +24,7 @@
 		84EB91881E620FF6000DD3FD /* CaretakerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EB91871E620FF6000DD3FD /* CaretakerViewController.swift */; };
 		84EB918A1E62230B000DD3FD /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EB91891E62230B000DD3FD /* ProfileViewController.swift */; };
 		84EB918C1E6231C8000DD3FD /* ProfileForCareTakerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EB918B1E6231C8000DD3FD /* ProfileForCareTakerViewController.swift */; };
+		84EB91901E62874D000DD3FD /* UserFinalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EB918F1E62874D000DD3FD /* UserFinalViewController.swift */; };
 		B433F2EB1E62044B002C1689 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B433F2EA1E62044B002C1689 /* CoreLocation.framework */; };
 		E1D6CD8F9F4D02479D467979 /* Pods_healapp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F14BFB9040E2C50AFEA8DE4B /* Pods_healapp.framework */; };
 /* End PBXBuildFile section */
@@ -49,6 +50,7 @@
 		84EB91871E620FF6000DD3FD /* CaretakerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaretakerViewController.swift; sourceTree = "<group>"; };
 		84EB91891E62230B000DD3FD /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		84EB918B1E6231C8000DD3FD /* ProfileForCareTakerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileForCareTakerViewController.swift; sourceTree = "<group>"; };
+		84EB918F1E62874D000DD3FD /* UserFinalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserFinalViewController.swift; sourceTree = "<group>"; };
 		B433F2EA1E62044B002C1689 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		F14BFB9040E2C50AFEA8DE4B /* Pods_healapp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_healapp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB47EB1A561F9EAEF8C8D280 /* Pods-healapp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-healapp.release.xcconfig"; path = "Pods/Target Support Files/Pods-healapp/Pods-healapp.release.xcconfig"; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 				84EB917F1E61CE50000DD3FD /* PickCareTakerViewController.swift */,
 				84EB917B1E6172A1000DD3FD /* ClientViewController.swift */,
 				84EB91871E620FF6000DD3FD /* CaretakerViewController.swift */,
+				84EB918F1E62874D000DD3FD /* UserFinalViewController.swift */,
 				84EB91831E61D978000DD3FD /* SecondViewController.swift */,
 				84EB916A1E6160FA000DD3FD /* Assets.xcassets */,
 				84EB916C1E6160FA000DD3FD /* LaunchScreen.storyboard */,
@@ -263,6 +266,7 @@
 				84EB918C1E6231C8000DD3FD /* ProfileForCareTakerViewController.swift in Sources */,
 				84EB91641E6160FA000DD3FD /* AppDelegate.swift in Sources */,
 				84EB91781E616E68000DD3FD /* Constants.swift in Sources */,
+				84EB91901E62874D000DD3FD /* UserFinalViewController.swift in Sources */,
 				84EB91841E61D978000DD3FD /* SecondViewController.swift in Sources */,
 				84EB917C1E6172A1000DD3FD /* ClientViewController.swift in Sources */,
 				84EB917A1E616F2A000DD3FD /* DataService.swift in Sources */,

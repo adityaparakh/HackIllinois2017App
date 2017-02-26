@@ -9,10 +9,18 @@
 import UIKit
 
 class UserFinalViewController: UIViewController {
-
+    @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var distance: UILabel!
+    @IBOutlet weak var tittle: UILabel!
+    @IBOutlet weak var reviews: UILabel!
+    var userData: [String:AnyObject] = [:]
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        print(userData)
+        name.text = userData["name"] as! String?
+        distance.text = String(userData["distance"] as! Int)
+        tittle.text = userData["title"] as! String?
+        reviews.text = "42 reviews"
         // Do any additional setup after loading the view.
     }
 
