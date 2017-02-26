@@ -32,8 +32,7 @@ Make sure your commit messages are in the proper format.
     based on a description rather than an example.  This patch fixes the
     problem by making the example concrete and imperative.
 
-    The first line is a real life imperative statement with a ticket number
-    from our issue tracker.  The body describes the behavior without the patch,
+    The first line is a real life imperative statementThe body describes the behavior, 
     why this is a problem, and how the patch fixes the problem when applied.
 
 
@@ -48,8 +47,7 @@ For changes of a trivial nature to comments and documentation, approvals will be
     to the Puppet repository. This is a problem because the contributor
     is left to assume how a commit of this nature may appear.
 
-    The first line is a real life imperative statement with '(doc)' in
-    place of what would have been the ticket number in a
+    The first line is a real life imperative statement with '(doc)'
     non-documentation related commit. The body describes the nature of
     the new documentation or comments added.
 
