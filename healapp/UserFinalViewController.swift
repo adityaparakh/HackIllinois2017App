@@ -13,6 +13,8 @@ class UserFinalViewController: UIViewController {
     @IBOutlet weak var distance: UILabel!
     @IBOutlet weak var tittle: UILabel!
     @IBOutlet weak var reviews: UILabel!
+    @IBOutlet weak var disease: UILabel!
+    @IBOutlet weak var imocode: UILabel!
     var userData: [String:AnyObject] = [:]
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +23,8 @@ class UserFinalViewController: UIViewController {
         distance.text = String(userData["distance"] as! Int)
         tittle.text = userData["title"] as! String?
         reviews.text = "42 reviews"
+        disease.text = DISEASE
+        imocode.text = "IMOCODE:" + "\(IMOCODE)"
         // Do any additional setup after loading the view.
     }
 
