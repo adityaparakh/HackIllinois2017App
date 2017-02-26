@@ -31,12 +31,17 @@ Please see detailed contribution guidelines in Contribute.MD in root folder
 
 This is an Xcode Project with Pod dependency managemnt
 
-use:
-    gem install cocoapods
-    pod update
-    pod install
+1. Install cocoapods
+
+			 	  gem install cocoapods
+
+2. Install pods
+
+			 	  pod update
     
-Open file using .xcworkspace Xcode file    
+3. Open file using .xcworkspace Xcode file    
+
+4. Update any dependencies in .podfile
  
 
 #How it was built
