@@ -64,7 +64,7 @@ class CaretakerViewController: UIViewController, CLLocationManagerDelegate  {
         }    }
     
     @IBAction func message(_ sender: Any) {
-        UIApplication.shared.openURL(URL(string: "sms://" + "\(self.patient["phone"])")!)
+        UIApplication.shared.open(URL(string: "sms:" + "\(self.patient["phone"])")!)
     }
     @IBAction func cancel(_ sender: Any) {
         print("cancel")
