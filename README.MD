@@ -1,5 +1,5 @@
-HEAL
-=====
+HEAL-iOS APP
+============
 ‘Uber for people in need of care’
 
 #Inspiration:
@@ -22,6 +22,26 @@ Heal is platform for people in need of care, assistance and help to find people 
 - Use pod file to update dependencies
 - Run pod update to update your local forked repository to install dependencies
 - Use xcsworkspace file to open project
+
+#Contribution Guidelines
+
+Please see detailed contribution guidelines in Contribute.MD in root folder
+
+#Build/Deployment Guidelines
+
+This is an Xcode Project with Pod dependency managemnt
+
+1. Install cocoapods
+
+			 	  gem install cocoapods
+
+2. Install pods
+
+			 	  pod update
+    
+3. Open file using .xcworkspace Xcode file    
+
+4. Update any dependencies in .podfile
  
 
 #How it was built
@@ -84,15 +104,15 @@ We have modularized the features within the app to ensure easy readable code and
 
 #Technologies used
 
-IMO API
-Firebase
-Real Time Database
-iOS 10
-Mapkit
-CoreLocation
-Python
-Django
-REST API
+- IMO API
+- Firebase
+- Real Time Database
+- iOS 10
+- Mapkit
+- CoreLocation
+- Python
+- Django
+- REST API
 
 #Links
 Swift Docuementation: https://developer.apple.com/library/prerelease/content/documentation/Swift/Conceptual/Swift_Programming_Language/
@@ -106,5 +126,6 @@ https://firebase.google.com/docs/
 Python Documentation:
 https://docs.python.org/3/
 
+#License
 
-
+Our software is free to use and re-distribute. Please read license in License.md
