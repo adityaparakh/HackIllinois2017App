@@ -14,6 +14,8 @@ class CaretakerViewController: UIViewController {
     @IBOutlet weak var active: UISwitch!
     @IBOutlet weak var patients: UIView!
     @IBOutlet weak var takingpatients: UILabel!
+    @IBOutlet weak var patientstack: UIStackView!
+    @IBOutlet weak var patienton: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,12 +42,19 @@ class CaretakerViewController: UIViewController {
     
     func isonline(){
         if active.isOn{
+            takingpatients.text = "Taking patients"
             let dict = ["uid": FIRAuth.auth()?.currentUser?.uid, "long": 12.22, "lat": 123.445] as [String : Any]
             DataService.ds.createLive((FIRAuth.auth()?.currentUser)!.uid, user: dict)
-        }else{
-            takingpatients.text = "not taking patients"
-            DataService.ds.createLive((FIRAuth.auth()?.currentUser)!.uid, user: [:])
             
+            patients.isHidden = false
+            patientstack.isHidden = false
+            patienton.isHidden = false
+        }else{
+            takingpatients.text = "Not taking patients"
+            DataService.ds.createLive((FIRAuth.auth()?.currentUser)!.uid, user: [:])
+            patients.isHidden = true
+            patientstack.isHidden = true
+            patienton.isHidden = true
         }
     }
 
