@@ -128,8 +128,16 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
         DataService.ds.REF_CLIENTS.child(uid!).observeSingleEvent(of: .value, with: { (snapshot) in
             // Get user value
             print(snapshot.value)
-            var value = snapshot.value as! Dictionary<String, AnyObject>
-            
+            let value = snapshot.value as! Dictionary<String, AnyObject>
+            let dt = [
+                "name": value["name"],
+                "phone": value["phone"],
+                "lat": self.loc?.coordinate.latitude,
+                "long": self.loc?.coordinate.longitude,
+                "current-medication": value["current-medication"],
+                "allergies": value["allergies"],
+                "previousdisease": value["previousdisease"]
+            ] as [String : Any]
             DataService.ds.REF_USERS.child(picked["uid"] as! String).child("active").setValue(value)
             self.performSegue(withIdentifier: "bookedsegue", sender: self)
             // ...
