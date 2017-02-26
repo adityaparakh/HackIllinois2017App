@@ -837,27 +837,16 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KDO-XE-ENO">
-                                <rect key="frame" x="164" y="629" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <segue destination="6hV-kV-UCc" kind="show" identifier="bookedsegue" id="JVp-i3-JLx"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="gpi-Lw-Okg" firstAttribute="top" secondItem="14x-4W-KBr" secondAttribute="bottom" constant="50" id="6Mq-P8-QvP"/>
                             <constraint firstAttribute="trailingMargin" secondItem="gpi-Lw-Okg" secondAttribute="trailing" constant="20" id="R0Z-JY-dzs"/>
-                            <constraint firstItem="KDO-XE-ENO" firstAttribute="leading" secondItem="p4K-a4-K1F" secondAttribute="leadingMargin" constant="148" id="W94-IV-Jny"/>
                             <constraint firstItem="14x-4W-KBr" firstAttribute="top" secondItem="maa-ij-T8u" secondAttribute="bottom" constant="20" id="e0b-Wc-0W9"/>
-                            <constraint firstItem="KDO-XE-ENO" firstAttribute="top" secondItem="gpi-Lw-Okg" secondAttribute="bottom" constant="12" id="iM6-po-2xN"/>
                             <constraint firstItem="gpi-Lw-Okg" firstAttribute="leading" secondItem="p4K-a4-K1F" secondAttribute="leadingMargin" constant="20" id="mqb-Ue-Fub"/>
                             <constraint firstItem="14x-4W-KBr" firstAttribute="leading" secondItem="p4K-a4-K1F" secondAttribute="leadingMargin" constant="20" id="sU5-1s-dCw"/>
                             <constraint firstAttribute="trailingMargin" secondItem="14x-4W-KBr" secondAttribute="trailing" constant="20" id="vk3-Hc-Dh0"/>
                             <constraint firstItem="2YE-nU-2wp" firstAttribute="top" secondItem="gpi-Lw-Okg" secondAttribute="bottom" constant="50" id="w6y-yc-8TD"/>
-                            <constraint firstItem="2YE-nU-2wp" firstAttribute="top" secondItem="KDO-XE-ENO" secondAttribute="bottom" constant="8" id="wJM-Ga-v0y"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="KDO-XE-ENO" secondAttribute="trailing" constant="149" id="zjN-FT-fYy"/>
                         </constraints>
                     </view>
                     <connections>
@@ -1028,6 +1017,9 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c8W-T4-gfs">
                                                 <rect key="frame" x="287" y="0.0" width="48" height="30"/>
                                                 <state key="normal" title="Logout"/>
+                                                <connections>
+                                                    <action selector="logout:" destination="6hV-kV-UCc" eventType="touchUpInside" id="Jgw-mq-fHP"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -1096,6 +1088,7 @@
                         <outlet property="reviews" destination="Ebz-nU-6di" id="ej4-Sd-ccS"/>
                         <outlet property="tittle" destination="gMN-lX-Uel" id="7m7-kS-Ufy"/>
                         <segue destination="biK-3m-OdJ" kind="unwind" identifier="unwind" unwindAction="unwindToMenuWithSegue:" id="CXI-FJ-cMT"/>
+                        <segue destination="biK-3m-OdJ" kind="unwind" unwindAction="logoutWithSegue:" id="szk-yJ-w2t"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a8w-Id-xu0" userLabel="First Responder" sceneMemberID="firstResponder"/>

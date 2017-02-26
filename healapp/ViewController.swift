@@ -190,6 +190,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print("Failed to find user's location: \(error.localizedDescription)")
     }
+    @IBAction func logout(segue: UIStoryboardSegue) {
+    }
     
 }
 

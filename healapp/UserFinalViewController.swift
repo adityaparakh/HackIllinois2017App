@@ -37,6 +37,9 @@ class UserFinalViewController: UIViewController {
     @IBAction func backbtn(_ sender: Any) {
         self.performSegue(withIdentifier: "unwind", sender: self)
     }
+    @IBAction func logout(_ sender: Any) {
+        self.performSegue(withIdentifier: "logout", sender: self)
+    }
     /*
     // MARK: - Navigation
 
