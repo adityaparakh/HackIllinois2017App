@@ -10,20 +10,24 @@ import UIKit
 import MapKit
 import CoreLocation
 
-class PickCareTakerViewController: UIViewController, CLLocationManagerDelegate {
+class PickCareTakerViewController: UIViewController, CLLocationManagerDelegate, UITextViewDelegate {
 
     
     var locationManager: CLLocationManager = CLLocationManager()
     
+    @IBOutlet weak var textview: UITextView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        textview.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
         locationManager.requestLocation()
         
         // Do any additional setup after loading the view.
+    }
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        textview.text = ""
     }
     
     override func viewWillAppear(_ animated: Bool) {
