@@ -126,5 +126,6 @@ https://firebase.google.com/docs/
 Python Documentation:
 https://docs.python.org/3/
 
+#License
 
-
+Our software is free to use and re-distribute. Please read license in License.md
