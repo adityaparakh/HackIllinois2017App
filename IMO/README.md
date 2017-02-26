@@ -1,5 +1,5 @@
-Flask starter kit for Heroku
-============================
+IMO Client to analyze Symptoms and Return Doctor categories
+===========================================================
 
 Install
 -------
