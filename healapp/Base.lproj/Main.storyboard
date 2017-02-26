@@ -636,7 +636,7 @@
                                 </constraints>
                                 <state key="normal" backgroundImage="Button-2"/>
                                 <connections>
-                                    <segue destination="nM1-xF-dHJ" kind="show" id="ZzS-9R-nL9"/>
+                                    <action selector="connect:" destination="E1y-fV-dAK" eventType="touchUpInside" id="42j-p3-kfE"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -664,6 +664,10 @@
                             <constraint firstItem="dux-I0-J6b" firstAttribute="leading" secondItem="r1U-cK-wZK" secondAttribute="leadingMargin" constant="20" id="yYf-U0-exm"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="query" destination="sDY-Q1-kFB" id="swr-sg-XGM"/>
+                        <segue destination="nM1-xF-dHJ" kind="show" id="q4o-g2-wg8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2uk-i9-2Yx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
