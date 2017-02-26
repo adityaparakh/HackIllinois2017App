@@ -120,9 +120,11 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let picked = results[indexPath.row] as! [String:Any]
+        print((FIRAuth.auth()?.currentUser?.uid)!)
         DataService.ds.REF_USERS.child((FIRAuth.auth()?.currentUser?.uid)!).observeSingleEvent(of: .value, with: { (snapshot) in
             // Get user value
             var value = snapshot.value as! Dictionary<String, AnyObject>
+            
             DataService.ds.REF_CLIENTS.child(picked["uid"] as! String).child("active").setValue(value)
             self.performSegue(withIdentifier: "bookedsegue", sender: self)
             // ...
@@ -164,7 +166,7 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func distCalc(gX: Double, gY: Double) -> Int {
         
         let fromLoc = CLLocation(latitude: gX, longitude: gY)
-        return self.loc!.distance(from: fromLoc)/1649
+        return Int(self.loc!.distance(from: fromLoc)/1649)
     }
     
     
