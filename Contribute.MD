@@ -53,21 +53,25 @@ For changes of a trivial nature to comments and documentation, approvals will be
 
 
 #Submitting Changes
-Read Open Source Contributor Guidelines. Link HERE
-Push your changes to a topic branch in your fork of the repository.
-Submit a pull request to the repository in the puppetlabs organization.
-Update your Jira ticket to mark that you have submitted code and are ready for it to be reviewed (Status: Ready for Merge).
-Include a link to the pull request in the ticket.
-The core team looks at Pull Requests on availability. Please understand the core creators of the app are for now college students and please pardon us if there is delay to updating and merging in a monthly triage meeting that we plan to hold in a public Google Hangout. The hangout is announced in the weekly status updates that are sent to the puppet-dev list. 
-After feedback has been given we expect responses within four weeks. After four weeks we may close the pull request if it isn't showing any activity.
-Revert Policy
-By running tests in advance and by engaging with peer review for prospective changes, your contributions have a high probability of becoming long lived parts of the the project. After being merged, the code will run through team’s code review pipeline.
-If the code change results in a test failure or build failiure, we will make our best effort to correct the error. If a fix cannot be determined and committed within 24 hours of its discovery, the commit(s) responsible may be reverted, at the discretion of the committer. 
-The original contributor will be notified of the revert in the Jira ticket associated with the change. Please write your own unit tests to test features you developed to help improve chances of getting accepted.
-Summary
+- Read Open Source Contributor Guidelines. http://wiki.civiccommons.org/Open_Source_Development_Guidelines/
+- Push your changes to a topic branch in your fork of the repository.
+- Submit a pull request to the repository in the puppetlabs organization.
+- Update your Jira ticket to mark that you have submitted code and are ready for it to be reviewed (Status: Ready for Merge).
+- Include a link to the pull request in the ticket.
+- The core team looks at Pull Requests on availability. Please understand the core creators of the app are for now college students and please pardon us if there is delay to updating and merging in a monthly triage meeting that we plan to hold in a public Google Hangout. The hangout is announced in the weekly status updates that are sent to the puppet-dev list. 
+- After feedback has been given we expect responses within four weeks. After four weeks we may close the pull request if it isn't showing any activity.
+
+#Revert Policy
+- By running tests in advance and by engaging with peer review for prospective changes, your contributions have a high probability of becoming long lived parts of the the project. After being merged, the code will run through team’s code review pipeline.
+- If the code change results in a test failure or build failiure, we will make our best effort to correct the error. If a fix cannot be determined and committed within 24 hours of its discovery, the commit(s) responsible may be reverted, at the discretion of the committer. 
+- The original contributor will be notified of the revert in the Jira ticket associated with the change. Please write your own unit tests to test features you developed to help improve chances of getting accepted.
+
+
+#Summary
 Changes resulting in test or build failures will be reverted without prior notice. Please understand.
-Additional Resources
-IMO API
+
+#Additional Resources
+Check IMO API
 Full text README of the application
 
 
