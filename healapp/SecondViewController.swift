@@ -74,6 +74,8 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
         ref.observe(FIRDataEventType.value, with: { (snapshot) in
             DispatchQueue.main.async {
             let users = snapshot.value as? [String : AnyObject]
+            print(users)
+            self.results = []
             for (key, val) in users! {
                 let d = val as! Dictionary<String, AnyObject>
                 let user = DataService.ds.REF_USERS.child(key).observeSingleEvent(of: .value, with: { (snapshot) in
@@ -89,7 +91,6 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
                     ] as [String : Any]
                         self.results.append(dt as NSDictionary)
                         self.friendsTable.reloadData()
-                        print(self.results)
                     // ...
                 }) { (error) in
                     print(error.localizedDescription)
@@ -131,7 +132,7 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         let match = self.results[indexPath.row]
         if let cell = tableView.dequeueReusableCell(withIdentifier: "resultcell") as? ResultCell {
-            cell.create(name: match["name"] as! String, distance: "\(match["distance"] as! Double)", rating: 3.5, price: Double(match["hourly"] as! String)!, title: match["title"] as! String)
+            cell.create(name: match["name"] as! String, distance: "\(match["distance"] as! Double)", rating: 45, price: Double(match["hourly"] as! String)!, title: match["title"] as! String)
             return cell
         }
         else {

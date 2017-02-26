@@ -34,8 +34,8 @@ class ResultCell: UITableViewCell {
         
         self.name.text = name
         self.distance.text = distance
-        self.rating.text = "\(rating)" + " star rating"
-        self.price.text = "\(price)" + "$/hr"
+        self.rating.text = "\(rating)" + " reviews"
+        self.price.text = "$\(price)" + "hr"
         self.title.text = title
         //self.profileImg.image = profile
         
