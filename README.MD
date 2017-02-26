@@ -25,7 +25,18 @@ Heal is platform for people in need of care, assistance and help to find people 
 
 #Contribution Guidelines
 
-Please see dtailed contribution guidelines in Contribute.MD in root folder
+Please see detailed contribution guidelines in Contribute.MD in root folder
+
+#Build/Deployment Guidelines
+
+This is an Xcode Project with Pod dependency managemnt
+
+use:
+    gem install cocoapods
+    pod update
+    pod install
+    
+Open file using .xcworkspace Xcode file    
  
 
 #How it was built
