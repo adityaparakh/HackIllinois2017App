@@ -107,18 +107,10 @@
                                 <rect key="frame" x="94" y="54" width="150" height="108"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="mI7-Nh-ioD" userLabel="Signin">
-                                <rect key="frame" x="90" y="434" width="189" height="133"/>
+                                <rect key="frame" x="90" y="500.5" width="189" height="66.5"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RFK-GO-xue">
-                                        <rect key="frame" x="0.0" y="0.0" width="189" height="44.5"/>
-                                        <state key="normal" image="Facebook"/>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZDg-Id-UcX">
-                                        <rect key="frame" x="0.0" y="44.5" width="189" height="44"/>
-                                        <state key="normal" image="Google"/>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ai5-GR-4gB">
-                                        <rect key="frame" x="0.0" y="88.5" width="189" height="44.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="189" height="66.5"/>
                                         <state key="normal" title="Sign up" backgroundImage="button"/>
                                         <connections>
                                             <action selector="signup:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EwX-tF-v0T"/>
@@ -138,7 +130,7 @@
                             <constraint firstItem="gju-6A-RVT" firstAttribute="leading" secondItem="Hds-5R-ade" secondAttribute="leading" id="EUJ-vD-E6Y"/>
                             <constraint firstItem="gju-6A-RVT" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.09" id="GVC-Ri-MGD"/>
                             <constraint firstItem="07l-gY-3Sf" firstAttribute="width" secondItem="eX9-Ez-c5s" secondAttribute="width" id="Qw5-lI-dX8"/>
-                            <constraint firstItem="mI7-Nh-ioD" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.2" id="Ra8-Iv-iMI"/>
+                            <constraint firstItem="mI7-Nh-ioD" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.1" id="Ra8-Iv-iMI"/>
                             <constraint firstItem="Hds-5R-ade" firstAttribute="trailing" secondItem="ADz-Qw-Ezt" secondAttribute="trailing" id="SF5-5t-Q4L"/>
                             <constraint firstItem="V44-jm-tbr" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" multiplier="2.7" id="ZjR-dL-n1j"/>
                             <constraint firstItem="Hds-5R-ade" firstAttribute="leading" secondItem="ADz-Qw-Ezt" secondAttribute="leading" id="eTZ-sU-uK6"/>
@@ -1250,8 +1242,6 @@
     </scenes>
     <resources>
         <image name="Button-2" width="336" height="124"/>
-        <image name="Facebook" width="509" height="129"/>
-        <image name="Google" width="509" height="130"/>
         <image name="Logo" width="390" height="108"/>
         <image name="button" width="287" height="124"/>
         <image name="card-bg" width="946" height="296"/>
