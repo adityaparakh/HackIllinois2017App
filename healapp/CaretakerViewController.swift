@@ -47,6 +47,9 @@ class CaretakerViewController: UIViewController, CLLocationManagerDelegate  {
             if let active = value?["active"] as? NSDictionary {
                 
             }
+            else {
+                
+            }
             // ...
         }) { (error) in
             print(error.localizedDescription)
