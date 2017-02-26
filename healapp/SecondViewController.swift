@@ -20,7 +20,8 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
     var results:[NSDictionary] = []
     var locationManager: CLLocationManager = CLLocationManager()
     var loc:CLLocation? = nil
-    
+    var i = 0;
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,8 +30,10 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
         locationManager.requestLocation()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2, execute: {
+            self.loadData()
+        })
         
-        loadData()
         self.friendsTable.delegate = self
         self.friendsTable.dataSource = self
         self.friendsTable.rowHeight = 150
