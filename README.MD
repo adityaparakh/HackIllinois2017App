@@ -104,15 +104,15 @@ We have modularized the features within the app to ensure easy readable code and
 
 #Technologies used
 
-IMO API
-Firebase
-Real Time Database
-iOS 10
-Mapkit
-CoreLocation
-Python
-Django
-REST API
+- IMO API
+- Firebase
+- Real Time Database
+- iOS 10
+- Mapkit
+- CoreLocation
+- Python
+- Django
+- REST API
 
 #Links
 Swift Docuementation: https://developer.apple.com/library/prerelease/content/documentation/Swift/Conceptual/Swift_Programming_Language/
