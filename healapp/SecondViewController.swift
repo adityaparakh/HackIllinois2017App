@@ -49,6 +49,7 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
         if let location = locations.first {
             print("Found user's location: \(location)")
             self.loc = location
+            print(self.loc)
         }
         else {
             print("YOLO")
@@ -152,38 +153,10 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func distCalc(gX: Double, gY: Double) -> Double {
         
         let fromLoc = CLLocation(latitude: gX, longitude: gY)
-        
-        return self.loc!.distance(from: fromLoc)
+        print("-----")
+        return self.loc!.distance(from: fromLoc)/1649
     }
     
-    @IBAction func addFriend(_ sender: Any) {
-        
-        var user:NSDictionary = [:]
-            
-            /*
-            Alamofire.request(DB_URL + "users/name/" + input.text!)
-                .responseJSON { response in
-                    //print(response.request)
-                    DispatchQueue.main.async {
-                        
-                        if let JSON = response.result.value as? NSDictionary{
-                            if let user = JSON["user"] as? NSDictionary{
-                                print(JSON)
-                                if let name = user["name"] as? String {
-                                    let fid = user["_id"] as! String
-                                    self.friends.append(name)
-                                    friendList.append(name)
-                                    friendId[name] = fid
-                                    self.friendsTable.reloadData()
-                                    Alamofire.request(DB_URL + "users/" + user_id + "/friends/" + fid, method: .post, parameters: nil, encoding: JSONEncoding.default)
-                                }
-                            }
-                        }
-                    }
-            }
-        }
-             */
-    }
     
     func alert(title: String, msg:String) {
         let alert = UIAlertController(title: title, message: msg, preferredStyle: UIAlertControllerStyle.alert)
