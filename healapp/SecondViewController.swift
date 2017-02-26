@@ -30,9 +30,7 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
         locationManager.requestLocation()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2, execute: {
-            self.loadData()
-        })
+        self.loadData()
         
         self.friendsTable.delegate = self
         self.friendsTable.dataSource = self
@@ -92,7 +90,8 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
                         "hourly":value["hourly"],
                         "rating":3.5,
                         "title":value["title"],
-                        "distance": self.distCalc(gX: d["lat"] as! Double, gY: d["long"] as! Double)
+                        "distance": self.distCalc(gX: d["lat"] as! Double, gY: d["long"] as! Double),
+                        "uid": val["uid"]!
                         ] as [String : Any]
                     self.results.append(dt as NSDictionary)
                     self.friendsTable.reloadData()
@@ -123,12 +122,14 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let picked = results[indexPath.row] as! [String:Any]
-        print((FIRAuth.auth()?.currentUser?.uid)!)
-        DataService.ds.REF_USERS.child((FIRAuth.auth()?.currentUser?.uid)!).observeSingleEvent(of: .value, with: { (snapshot) in
+        let preferences = UserDefaults.standard
+        let uid = preferences.string(forKey: "uid")
+        DataService.ds.REF_CLIENTS.child(uid!).observeSingleEvent(of: .value, with: { (snapshot) in
             // Get user value
+            print(snapshot.value)
             var value = snapshot.value as! Dictionary<String, AnyObject>
             
-            DataService.ds.REF_CLIENTS.child(picked["uid"] as! String).child("active").setValue(value)
+            DataService.ds.REF_USERS.child(picked["uid"] as! String).child("active").setValue(value)
             self.performSegue(withIdentifier: "bookedsegue", sender: self)
             // ...
         }) { (error) in

@@ -43,6 +43,8 @@ class ViewController: UIViewController {
                 }
             }
             else{
+                let preferences = UserDefaults.standard
+                preferences.set(user!.uid, forKey: "uid")
                 if(self.caretaker.isOn) {
                     // THIS IS THE PERSON ASKING FOR HELP.
                     self.uid = user!.uid
@@ -51,7 +53,6 @@ class ViewController: UIViewController {
                 }
                 else {
                     // THIS IS THE HELPER
-                    self.uid = user!.uid
                     self.performSegue(withIdentifier: "caretakerprofile", sender: self) // Create and store userdata on Firebase.
                 }
                 
@@ -81,6 +82,8 @@ class ViewController: UIViewController {
                 }
                 
             } else {
+                let preferences = UserDefaults.standard
+                preferences.set(user!.uid, forKey: "uid")
                 if self.caretaker.isOn{
                     // user
                     DataService.ds.REF_USERS.child(user!.uid).observe(.value, with: { (snapshot) in

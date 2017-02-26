@@ -9,6 +9,7 @@
 import UIKit
 import FirebaseAuth
 import CoreLocation
+import FirebaseDatabase
 
 class CaretakerViewController: UIViewController, CLLocationManagerDelegate  {
 
@@ -37,6 +38,20 @@ class CaretakerViewController: UIViewController, CLLocationManagerDelegate  {
         // Dispose of any resources that can be recreated.
     }
     
+    func loadData() {
+        let pref = UserDefaults.standard
+        let uid = pref.string(forKey: "uid")
+        DataService.ds.REF_CLIENTS.child(uid!).observeSingleEvent(of: .value, with: { (snapshot) in
+            // Get user value
+            let value = snapshot.value as? NSDictionary
+            if let active = value?["active"] as? NSDictionary {
+                
+            }
+            // ...
+        }) { (error) in
+            print(error.localizedDescription)
+        }    }
+    
     @IBAction func message(_ sender: Any) {
         print("message")
     }
@@ -44,6 +59,7 @@ class CaretakerViewController: UIViewController, CLLocationManagerDelegate  {
         print("cancel")
     }
     @IBAction func getpatientdata(_ sender: Any) {
+        
     }
     @IBAction func directions(_ sender: Any) {
     }
