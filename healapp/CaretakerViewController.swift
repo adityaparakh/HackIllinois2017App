@@ -15,6 +15,8 @@ class CaretakerViewController: UIViewController, CLLocationManagerDelegate  {
     @IBOutlet weak var active: UISwitch!
     @IBOutlet weak var patients: UIView!
     @IBOutlet weak var takingpatients: UILabel!
+    @IBOutlet weak var patientstack: UIStackView!
+    @IBOutlet weak var patienton: UIView!
     
     var locationManager: CLLocationManager = CLLocationManager()
     var loc:CLLocation? = nil
@@ -50,10 +52,16 @@ class CaretakerViewController: UIViewController, CLLocationManagerDelegate  {
         if active.isOn{
             let dict = ["uid": FIRAuth.auth()?.currentUser?.uid, "long": self.loc?.coordinate.longitude, "lat": self.loc?.coordinate.latitude] as [String : Any]
             DataService.ds.createLive((FIRAuth.auth()?.currentUser)!.uid, user: dict)
-        }else{
-            takingpatients.text = "not taking patients"
-            DataService.ds.createLive((FIRAuth.auth()?.currentUser)!.uid, user: [:])
             
+            patients.isHidden = false
+            patientstack.isHidden = false
+            patienton.isHidden = false
+        }else{
+            takingpatients.text = "Not taking patients"
+            DataService.ds.createLive((FIRAuth.auth()?.currentUser)!.uid, user: [:])
+            patients.isHidden = true
+            patientstack.isHidden = true
+            patienton.isHidden = true
         }
     }
     
