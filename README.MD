@@ -1,5 +1,5 @@
-HEAL
-=====
+HEAL-iOS APP
+============
 ‘Uber for people in need of care’
 
 #Inspiration:
@@ -22,6 +22,10 @@ Heal is platform for people in need of care, assistance and help to find people 
 - Use pod file to update dependencies
 - Run pod update to update your local forked repository to install dependencies
 - Use xcsworkspace file to open project
+
+#Contribution Guidelines
+
+Please see dtailed contribution guidelines in Contribute.MD in root folder
  
 
 #How it was built
