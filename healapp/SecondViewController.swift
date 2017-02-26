@@ -10,6 +10,7 @@ import UIKit
 import Alamofire
 import CoreLocation
 import FirebaseDatabase
+import FirebaseAuth
 import MapKit
 
 class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, CLLocationManagerDelegate  {
@@ -88,14 +89,15 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
                         "hourly":value["hourly"],
                         "rating":3.5,
                         "title":value["title"],
-                        "distance": self.distCalc(gX: d["lat"] as! Double, gY: d["long"] as! Double) 
-                    ] as [String : Any]
-                        self.results.append(dt as NSDictionary)
-                        self.friendsTable.reloadData()
+                        "distance": self.distCalc(gX: d["lat"] as! Double, gY: d["long"] as! Double)
+                        ] as [String : Any]
+                    self.results.append(dt as NSDictionary)
+                    self.friendsTable.reloadData()
                     // ...
                 }) { (error) in
                     print(error.localizedDescription)
                 }
+
             }
             }
         })
@@ -117,7 +119,16 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        print("hi")
+        let picked = results[indexPath.row] as! [String:Any]
+        DataService.ds.REF_USERS.child((FIRAuth.auth()?.currentUser?.uid)!).observeSingleEvent(of: .value, with: { (snapshot) in
+            // Get user value
+            var value = snapshot.value as! Dictionary<String, AnyObject>
+            DataService.ds.REF_CLIENTS.child(picked["uid"] as! String).child("active").setValue(value)
+            self.performSegue(withIdentifier: "bookedsegue", sender: self)
+            // ...
+        }) { (error) in
+            print(error.localizedDescription)
+        }
         
     }
     
@@ -153,7 +164,6 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func distCalc(gX: Double, gY: Double) -> Double {
         
         let fromLoc = CLLocation(latitude: gX, longitude: gY)
-        print("-----")
         return self.loc!.distance(from: fromLoc)/1649
     }
     
